@@ -1,6 +1,7 @@
 .header {
   padding: 12px 16px;
-  border-bottom: 1px solid #2a2a2a;
+  border-bottom: 1px solid var(--border);
+  background: var(--panel);
 }
 
 .inner {
@@ -11,30 +12,44 @@
   gap: 16px;
 }
 
+/* Brand (site title) */
 .brand {
-  color: #aaa;
+  color: var(--muted);
   font-size: 14px;
   white-space: nowrap;
+  text-decoration: none;
 }
 
+/* Nav container */
 .nav {
   display: flex;
   gap: 12px;
   margin-left: auto; /* push nav to the right */
 }
 
+/* Links */
 .link {
   font-size: 14px;
-  color: #bbb;
+  color: var(--subtle);
   text-decoration: none;
+  padding: 6px 8px;
+  border-radius: 6px;
+  outline: none;
 }
 
 .link:hover {
-  text-decoration: underline;
+  color: var(--text);
 }
 
+/* Active route */
 .active {
-  color: #fff;
+  color: var(--text);
   font-weight: 600;
-  text-decoration: none;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+}
+
+/* Keyboard accessibility */
+.link:focus-visible {
+  box-shadow: 0 0 0 2px var(--accent);
 }

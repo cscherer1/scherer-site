@@ -1,12 +1,37 @@
-:root { --maxw: 960px; }
+/* ===== Theme tokens ===== */
+:root {
+  /* layout */
+  --maxw: 960px;
+
+  /* colors */
+  --bg: #0f1115;        /* page background */
+  --panel: #111317;     /* header/footer panels */
+  --text: #e6e7eb;      /* primary text */
+  --muted: #a3adbb;     /* secondary text */
+  --subtle: #b7c0cc;    /* tertiary text */
+  --border: #222733;    /* hairline borders */
+
+  /* accent (indigo) */
+  --accent: #6366f1;
+  --accent-hover: #7c7ffb;
+}
+
+/* ===== Base reset ===== */
 * { box-sizing: border-box; }
 html, body, #root { height: 100%; margin: 0; }
-body { font-family: system-ui, Segoe UI, Roboto, Helvetica, Arial; line-height: 1.5; }
-a { color: inherit; text-decoration: none; }
-a:hover { text-decoration: underline; }
+body {
+  font-family: system-ui, Segoe UI, Roboto, Helvetica, Arial;
+  line-height: 1.5;
+  background: var(--bg);
+  color: var(--text);
+}
 
-/* tiny utilities */
+/* Links */
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; color: var(--accent-hover); }
+
+/* Utilities */
 .container { max-width: var(--maxw); margin: 0 auto; padding: 0 16px; }
-.muted { color: #aaa; }
-.subtle { color: #bbb; }
-.sep { border-color: #2a2a2a; }
+.muted { color: var(--muted); }
+.subtle { color: var(--subtle); }
+.sep { border-color: var(--border); }
