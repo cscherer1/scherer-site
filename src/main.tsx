@@ -17,7 +17,7 @@ const router = createBrowserRouter([
       { index: true, element: <LandingPage /> }, // /
       { path: "about", element: <AboutPage /> }, // /about
       { path: "contact", element: <ContactPage /> }, // /contact
-      { path: "*", element: <NotFoundPage /> },
+      { path: "*", element: <NotFoundPage /> }, // 404
     ],
   },
 ]);
