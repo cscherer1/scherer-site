@@ -1,0 +1,32 @@
+.main {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: 0.3px;
+}
+
+.role {
+  margin: 2px 0 0;
+}
+
+.tagline {
+  margin-top: 16px;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 16px;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.section {
+  margin-top: 48px;
+}
