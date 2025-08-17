@@ -1,0 +1,27 @@
+.footer {
+  padding: 24px 16px;
+  border-top: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--muted);
+}
+
+.inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.right {
+  display: flex;
+  gap: 12px;
+}
+
+.link {
+  color: var(--subtle);
+  text-decoration: none;
+}
+.link:hover { color: var(--text); text-decoration: underline; }

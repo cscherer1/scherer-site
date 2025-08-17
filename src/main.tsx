@@ -6,6 +6,7 @@ import AppShell from "./shell/AppShell";
 import LandingPage from "./pages/Landing";
 import AboutPage from "./pages/About";
 import ContactPage from "./pages/Contact";
+import NotFoundPage from "./pages/NotFound";
 
 
 const router = createBrowserRouter([
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
       { index: true, element: <LandingPage /> }, // /
       { path: "about", element: <AboutPage /> }, // /about
       { path: "contact", element: <ContactPage /> }, // /contact
+      { path: "*", element: <NotFoundPage /> },
     ],
   },
 ]);
