@@ -24,4 +24,7 @@
   color: var(--subtle);
   text-decoration: none;
 }
-.link:hover { color: var(--text); text-decoration: underline; }
+.link:hover {
+  color: var(--text);
+  text-decoration: underline;
+}

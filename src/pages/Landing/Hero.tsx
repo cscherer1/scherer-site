@@ -7,7 +7,12 @@ export default function Hero() {
       <h1 className={styles.title}>{landingContent.owner}</h1>
       <p className={`muted ${styles.role}`}>{landingContent.roles}</p>
       <p className={`subtle ${styles.tagline}`}>{landingContent.tagline}</p>
-      <a href={landingContent.cta.href} className={styles.cta} target= {landingContent.cta.newTab ? "_blank" : "_self"} rel={landingContent.cta.newTab ? "noopener noreferrer" : undefined} >
+      <a
+        href={landingContent.cta.href}
+        className={styles.cta}
+        target={landingContent.cta.newTab ? "_blank" : "_self"}
+        rel={landingContent.cta.newTab ? "noopener noreferrer" : undefined}
+      >
         {landingContent.cta.label}
       </a>
     </section>

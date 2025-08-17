@@ -11,6 +11,6 @@ export const aboutContent: AboutContent = {
   highlights: [
     "Full-stack: frontends, APIs, CI/CD, infra as code",
     "Designing resilient systems and integrations",
-    "Clear documentation and maintainable patterns"
-  ]
+    "Clear documentation and maintainable patterns",
+  ],
 };
