@@ -1,0 +1,22 @@
+.main {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+}
+
+.heading {
+  margin-top: 0;
+}
+
+.blurb {
+  margin: 8px 0 16px;
+  color: #bbb;
+}
+
+.list {
+  margin: 0;
+  padding-left: 18px;
+}
+.list li {
+  margin: 6px 0;
+}
