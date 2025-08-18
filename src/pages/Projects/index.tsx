@@ -10,6 +10,11 @@ export default function ProjectsPage() {
         {projectsContent.items.map((p) => (
           <article key={p.id} className={styles.card}>
             <h3 className={styles.title}>{p.title}</h3>
+            
+            <div className={styles.meta}>
+              {p.year} · {p.role}
+            </div>
+            
             <p className={styles.blurb}>{p.blurb}</p>
 
             <div className={styles.tags}>
