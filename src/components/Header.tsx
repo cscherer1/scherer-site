@@ -21,6 +21,16 @@ export default function Header() {
           </NavLink>
 
           <NavLink
+            to="/projects"
+            end
+            className={({ isActive }) =>
+              isActive ? `${styles.link} ${styles.active}` : styles.link
+            }
+          >
+            Projects
+          </NavLink>
+
+          <NavLink
             to="/about"
             className={({ isActive }) =>
               isActive ? `${styles.link} ${styles.active}` : styles.link

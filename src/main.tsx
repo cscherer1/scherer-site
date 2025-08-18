@@ -7,6 +7,7 @@ import LandingPage from "./pages/Landing";
 import AboutPage from "./pages/About";
 import ContactPage from "./pages/Contact";
 import NotFoundPage from "./pages/NotFound";
+import ProjectsPage from "./pages/Projects";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
     element: <AppShell />,
     children: [
       { index: true, element: <LandingPage /> }, // /
+      { path: "projects", element: <ProjectsPage /> }, // /projects
       { path: "about", element: <AboutPage /> }, // /about
       { path: "contact", element: <ContactPage /> }, // /contact
       { path: "*", element: <NotFoundPage /> }, // 404

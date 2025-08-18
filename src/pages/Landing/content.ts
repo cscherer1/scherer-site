@@ -10,5 +10,5 @@ export const landingContent: LandingContent = {
   roles: "Software Developer | Solutions Architect",
   tagline:
     "Full-stack developer focused on designing scalable solutions and solving complex problems.",
-  cta: { label: "View Projects", href: "https://github.com/cscherer1", newTab: true },
+  cta: { label: "View Projects", href: "/projects", newTab: false },
 };
