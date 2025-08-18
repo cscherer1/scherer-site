@@ -20,7 +20,7 @@ export const projectsContent: ProjectsContent = {
       title: "Adobe License Automation",
       blurb:
         "Policy-driven license sync across ServiceNow with scheduled reconciliation and exception handling.",
-      tech: ["ServiceNow", "REST", "Automation"],
+      tech: ["ServiceNow", "REST", "Automation", "Javascript"],
       link: "#",
     },
     {
@@ -28,7 +28,7 @@ export const projectsContent: ProjectsContent = {
       title: "Monthly Server Patching Orchestrator",
       blurb:
         "Config-driven scheduling engine with RITM/SCTASK generation, approvals, and status rollups.",
-      tech: ["ServiceNow", "Workflow", "PowerShell"],
+      tech: ["ServiceNow", "Workflow", "Javascript", "JSON"],
       link: "#",
     },
     {
@@ -36,7 +36,7 @@ export const projectsContent: ProjectsContent = {
       title: "DFS Archive Request Pipeline",
       blurb:
         "MID Server + PowerShell pipeline with guarded concurrency and throttling for bulk archive jobs.",
-      tech: ["MID Server", "PowerShell", "Governance"],
+      tech: ["MID Server", "PowerShell", "Governance", "Javascript", "JSON"],
       link: "#",
     },
   ],
