@@ -13,6 +13,6 @@ export const contactContent: ContactContent = {
   location: "Kansas City, MO",
   note: [
     "Open to In-office, Hybrid, or Remote full-time positions.",
-    "Prefer email for first contact. I typically reply in less than 12 hours.",
+    "Prefer email for first contact. I typically reply within 24 hours.",
   ],
 };
