@@ -20,3 +20,146 @@
 .list li {
   margin: 6px 0;
 }
+.profile {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+.section {
+  padding: 20px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+.subheading {
+  font-size: 1.15rem;
+  margin: 0 0 10px;
+}
+.block {
+  margin: 12px 0 18px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.entity {
+  font-weight: 600;
+}
+.dates {
+  color: #999;
+  font-variant-numeric: tabular-nums;
+}
+.meta {
+  color: #999;
+  margin: 4px 0 0;
+}
+.muted {
+  color: #aaa;
+}
+
+.cards {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+@media (min-width: 720px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  padding: 12px;
+}
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+.badge {
+  font-size: 12px;
+  padding: 2px 8px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+}
+.cardTitle {
+  font-weight: 600;
+}
+.cardBottom {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 6px;
+}
+.link {
+  text-decoration: underline;
+}
+.eduItem {
+  padding: 12px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.06);
+  margin-bottom: 16px; /* add spacing after each school */
+}
+
+.eduItem:last-child {
+  border-bottom: none; /* no divider on the last one */
+  margin-bottom: 0; /* don't add extra gap after the last item */
+}
+
+/* --- Professional Development (flat rows) --- */
+.devList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.devItem {
+  padding: 12px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.06);
+}
+.devItem:last-child {
+  border-bottom: none;
+}
+
+.devTitleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+.devTitle {
+  font-weight: 600;
+}
+
+.devMetaRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.pill {
+  font-size: 12px;
+  margin-left: 4px;
+  padding: 2px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  color: #aab;
+}
+
+/* keep your existing helpers */
+.note {
+  color: #bbb;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}

@@ -22,8 +22,15 @@ export default function ContactPage() {
         <span className={styles.label}>Location</span>
         <span className={styles.value}>{contactContent.location}</span>
       </div>
-
-      <p className={styles.note}>{contactContent.note}</p>
+      <ul>
+        {contactContent.note.map((n, i) => (
+          <li key={i} className={styles.awardRow}>
+            <span>
+              <span className={styles.note}>{n}</span>
+            </span>
+          </li>
+        ))}
+      </ul>
     </main>
   );
 }

@@ -4,7 +4,7 @@ export type Project = {
   blurb: string;
   tech: string[];
   year: number;
-  role: string;  
+  role: string;
   link?: string; // live demo or internal doc
   repo?: string; // GitHub link if public
 };
