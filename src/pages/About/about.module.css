@@ -94,6 +94,12 @@
 .cardTitle {
   font-weight: 600;
 }
+
+.provider {
+  font-weight: 400;
+  color: #999;
+  font-size: 16px;
+}
 .cardBottom {
   display: flex;
   gap: 10px;

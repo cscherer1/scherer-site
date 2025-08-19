@@ -80,7 +80,7 @@ export default function AboutPage() {
               </div>
 
               <div className={styles.cardMeta}>
-                <span className={styles.cardTitle}>{c.provider}</span>
+                <span className={styles.provider}>{c.provider}</span>
                 <div>
                   {c.year ? <span className={styles.dates}>{c.year}</span> : null}
                   {c.status ? <span className={styles.pill}>{c.status}</span> : null}
