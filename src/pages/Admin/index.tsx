@@ -2,9 +2,21 @@ import { useState, useEffect } from "react";
 import type { FormEvent } from "react";
 import styles from "./admin.module.css";
 
-import { login, createProject, fetchProjects, updateProject, deleteProject } from "../../lib/api";
+import { login, createProject, fetchProjects, updateProject, deleteProject, ApiError } from "../../lib/api";
 import { setToken, clearToken, isAuthed } from "../../lib/auth";
 import type { Project, ProjectsDto } from "../../lib/types";
+
+type FieldErrors = Record<string, string[]>;
+
+function normalizeFieldErrors(src: Record<string, string[]> | undefined): FieldErrors {
+  if (!src) return {};
+  const dst: FieldErrors = {};
+  for (const [k, v] of Object.entries(src)) {
+    const key = k.toLowerCase().split("[")[0]; // "Tech[0]" -> "tech"
+    dst[key] = (dst[key] ?? []).concat(v);
+  }
+  return dst;
+}
 
 export default function AdminPage() {
   // ---- auth state ----
@@ -31,6 +43,7 @@ export default function AdminPage() {
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [submitOk, setSubmitOk] = useState<string | null>(null);
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
 
   async function load() {
     setLoading(true);
@@ -76,6 +89,7 @@ export default function AdminPage() {
     setRole("");
     setLink("");
     setRepo("");
+    setFieldErrors({});
   }
 
   function startEdit(p: Project) {
@@ -87,6 +101,7 @@ export default function AdminPage() {
     setRole(p.role);
     setLink(p.link ?? "");
     setRepo(p.repo ?? "");
+    setFieldErrors({});
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
@@ -114,6 +129,7 @@ export default function AdminPage() {
     e.preventDefault();
     setSubmitOk(null);
     setSubmitError(null);
+    setFieldErrors({});
     setSubmitting(true);
     try {
       const tech = techCsv.split(",").map(s => s.trim()).filter(Boolean);
@@ -138,8 +154,13 @@ export default function AdminPage() {
       await load();
       resetForm();
     } catch (err) {
-      const msg = err instanceof Error ? err.message : String(err);
-      setSubmitError(msg || "Save failed");
+      if (err instanceof ApiError && err.status === 400) {
+        setFieldErrors(normalizeFieldErrors(err.fieldErrors));
+        setSubmitError("Please fix the highlighted fields.");
+      } else {
+        const msg = err instanceof Error ? err.message : String(err);
+        setSubmitError(msg || "Save failed");
+      }
     } finally {
       setSubmitting(false);
     }
@@ -189,32 +210,81 @@ export default function AdminPage() {
             <form onSubmit={handleSubmit}>
               <div className={styles.row}>
                 <label htmlFor="title">Title</label>
-                <input id="title" className={styles.input} value={title} onChange={(e) => setTitle(e.target.value)} />
+                <input
+                  id="title"
+                  className={`${styles.input} ${fieldErrors.title ? styles.invalid : ""}`}
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                />
               </div>
+              {fieldErrors.title && <div className={styles.fieldError}>{fieldErrors.title.join(" ")}</div>}
+
               <div className={styles.row}>
                 <label htmlFor="blurb">Blurb</label>
-                <textarea id="blurb" className={styles.textarea} value={blurb} onChange={(e) => setBlurb(e.target.value)} />
+                <textarea
+                  id="blurb"
+                  className={`${styles.textarea} ${fieldErrors.blurb ? styles.invalid : ""}`}
+                  value={blurb}
+                  onChange={(e) => setBlurb(e.target.value)}
+                />
               </div>
+              {fieldErrors.blurb && <div className={styles.fieldError}>{fieldErrors.blurb.join(" ")}</div>}
+
               <div className={styles.row}>
                 <label htmlFor="tech">Tech (comma-separated)</label>
-                <input id="tech" className={styles.input} value={techCsv} onChange={(e) => setTechCsv(e.target.value)} />
+                <input
+                  id="tech"
+                  className={`${styles.input} ${fieldErrors.tech ? styles.invalid : ""}`}
+                  value={techCsv}
+                  onChange={(e) => setTechCsv(e.target.value)}
+                />
               </div>
+              {fieldErrors.tech && <div className={styles.fieldError}>{fieldErrors.tech.join(" ")}</div>}
+
               <div className={styles.row}>
                 <label htmlFor="year">Year</label>
-                <input id="year" className={styles.input} type="number" value={year} onChange={(e) => setYear(Number(e.target.value))} />
+                <input
+                  id="year"
+                  className={`${styles.input} ${fieldErrors.year ? styles.invalid : ""}`}
+                  type="number"
+                  value={year}
+                  onChange={(e) => setYear(Number(e.target.value))}
+                />
               </div>
+              {fieldErrors.year && <div className={styles.fieldError}>{fieldErrors.year.join(" ")}</div>}
+
               <div className={styles.row}>
                 <label htmlFor="role">Role</label>
-                <input id="role" className={styles.input} value={role} onChange={(e) => setRole(e.target.value)} />
+                <input
+                  id="role"
+                  className={`${styles.input} ${fieldErrors.role ? styles.invalid : ""}`}
+                  value={role}
+                  onChange={(e) => setRole(e.target.value)}
+                />
               </div>
+              {fieldErrors.role && <div className={styles.fieldError}>{fieldErrors.role.join(" ")}</div>}
+
               <div className={styles.row}>
                 <label htmlFor="link">Link (optional)</label>
-                <input id="link" className={styles.input} value={link} onChange={(e) => setLink(e.target.value)} />
+                <input
+                  id="link"
+                  className={`${styles.input} ${fieldErrors.link ? styles.invalid : ""}`}
+                  value={link}
+                  onChange={(e) => setLink(e.target.value)}
+                />
               </div>
+              {fieldErrors.link && <div className={styles.fieldError}>{fieldErrors.link.join(" ")}</div>}
+
               <div className={styles.row}>
                 <label htmlFor="repo">Repo (optional)</label>
-                <input id="repo" className={styles.input} value={repo} onChange={(e) => setRepo(e.target.value)} />
+                <input
+                  id="repo"
+                  className={`${styles.input} ${fieldErrors.repo ? styles.invalid : ""}`}
+                  value={repo}
+                  onChange={(e) => setRepo(e.target.value)}
+                />
               </div>
+              {fieldErrors.repo && <div className={styles.fieldError}>{fieldErrors.repo.join(" ")}</div>}
 
               <div className={styles.actions}>
                 <button className={`${styles.btn} ${styles.btnAccent}`} disabled={submitting}>

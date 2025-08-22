@@ -92,3 +92,15 @@
   color: var(--muted);
   font-size: 12px;
 }
+
+.invalid {
+  border-color: #ff6b6b;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.15);
+}
+
+.fieldError {
+  color: #ff6b6b;
+  font-size: 13px;
+  margin-top: 6px;
+}
+

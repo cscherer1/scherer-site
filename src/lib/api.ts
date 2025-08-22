@@ -2,6 +2,29 @@
 import type { ProjectsDto, LoginResponse, CreateProjectRequest, Project, UpdateProjectRequest } from "./types";
 import { getToken } from "./auth";
 
+/** Structured error with optional field-level messages from ASP.NET validation */
+export class ApiError extends Error {
+  status: number;
+  statusText: string;
+  body?: unknown;
+  fieldErrors?: Record<string, string[]>;
+
+  constructor(
+    message: string,
+    status: number,
+    statusText: string,
+    body?: unknown,
+    fieldErrors?: Record<string, string[]>
+  ) {
+    super(message);
+    Object.setPrototypeOf(this, ApiError.prototype);
+    this.status = status;
+    this.statusText = statusText;
+    this.body = body;
+    this.fieldErrors = fieldErrors;
+  }
+}
+
 const API_BASE = import.meta.env.VITE_API_URL ?? "";
 
 /** Generic JSON fetcher with Authorization header if a token exists */
@@ -18,16 +41,45 @@ export async function api<T>(path: string, init?: RequestInit): Promise<T> {
     },
   });
 
+  // Parse JSON as unknown, then narrow safely
+  let json: unknown;
+  try {
+    json = await res.clone().json();
+  } catch {
+    // non-JSON response; leave json = undefined
+  }
+
+  const isObj = (v: unknown): v is Record<string, unknown> =>
+    typeof v === "object" && v !== null;
+
+  const title =
+    isObj(json) && typeof json.title === "string" ? json.title : undefined;
+
+  const fieldErrors =
+    isObj(json) && isObj(json.errors)
+      ? (json.errors as Record<string, string[]>)
+      : undefined;
+
   if (!res.ok) {
-    const details = await res.text().catch(() => "");
-    throw new Error(
-      `HTTP ${res.status} ${res.statusText}${details ? ` — ${details.slice(0, 200)}` : ""}`
+    const statusText = title || res.statusText || "Error";
+    throw new ApiError(
+      `HTTP ${res.status} ${statusText}`,
+      res.status,
+      statusText,
+      json,
+      fieldErrors
     );
   }
 
   if (res.status === 204) return undefined as unknown as T;
-  return res.json() as Promise<T>;
+
+  // If we already parsed JSON successfully, return it as T
+  if (json !== undefined) return json as T;
+
+  // Fallback: parse now (should be JSON if ok)
+  return (await res.json()) as T;
 }
+
 
 /** Convenience function for the Projects page */
 export function fetchProjects() {
