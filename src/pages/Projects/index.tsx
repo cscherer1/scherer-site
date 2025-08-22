@@ -47,12 +47,8 @@ export default function ProjectsPage() {
     <main className={styles.main}>
       <h2 className={styles.heading}>{data?.heading ?? "Projects"}</h2>
 
-      {!apiBase && (
-        <p className="subtle">Using local fallback content (API URL not configured).</p>
-      )}
-      {error && (
-        <p className="subtle">Using fallback — API error: {error}</p>
-      )}
+      {!apiBase && <p className="subtle">Using local fallback content (API URL not configured).</p>}
+      {error && <p className="subtle">Using fallback — API error: {error}</p>}
       {loading && !data && <p className="subtle">Loading…</p>}
 
       {data && (

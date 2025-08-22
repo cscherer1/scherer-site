@@ -14,3 +14,19 @@ export type ProjectsDto = {
   heading: string;
   items: Project[];
 };
+
+// === Admin / Auth ===
+export type LoginResponse = {
+  token: string;
+};
+
+// === Create Project (matches .NET CreateProjectRequest) ===
+export type CreateProjectRequest = {
+  title: string;
+  blurb: string;
+  tech: string[];
+  year: number;
+  role: string;
+  link?: string;
+  repo?: string;
+};
