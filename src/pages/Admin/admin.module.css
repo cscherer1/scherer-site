@@ -1,0 +1,78 @@
+.main {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+}
+
+.heading {
+  margin-top: 0;
+}
+
+.card {
+  border: 1px solid var(--border);
+  background: var(--panel);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  align-items: center;
+  gap: 12px;
+  margin: 10px 0;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  background: #0f1115;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  outline: none;
+}
+
+.textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+.actions {
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btnAccent {
+  border-color: var(--accent);
+}
+
+.note {
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.error {
+  color: #ff6b6b;
+  font-size: 14px;
+  margin-top: 8px;
+}
+.success {
+  color: #3ddc97;
+  font-size: 14px;
+  margin-top: 8px;
+}
