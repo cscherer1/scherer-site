@@ -68,9 +68,14 @@
   border: 1px solid var(--border, #333);
 }
 
-.btnLink { border-color: transparent; background: var(--accent, #2b72ff); color: #fff; }
-.btnLink:hover { filter: brightness(1.05); }
-
-.btnSecondary { background: transparent; color: var(--text, #ddd); }
-.btnSecondary:hover { border-color: var(--accent, #2b72ff); color: #fff; }
-
+.btnLink,
+.btnSecondary {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;   /* smaller padding */
+  font-size: 0.85rem;       /* slightly smaller text */
+  border-radius: 0.5rem;    /* softer instead of full pill */
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
