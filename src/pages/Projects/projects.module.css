@@ -50,3 +50,27 @@
   font-size: 13px;
   margin: 0 0 8px 0;
 }
+
+.links {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.btnLink,
+.btnSecondary {
+  display: inline-block;
+  padding: 0.45rem 0.75rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid var(--border, #333);
+}
+
+.btnLink { border-color: transparent; background: var(--accent, #2b72ff); color: #fff; }
+.btnLink:hover { filter: brightness(1.05); }
+
+.btnSecondary { background: transparent; color: var(--text, #ddd); }
+.btnSecondary:hover { border-color: var(--accent, #2b72ff); color: #fff; }
+

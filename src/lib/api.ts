@@ -1,5 +1,11 @@
 // src/lib/api.ts
-import type { ProjectsDto, LoginResponse, CreateProjectRequest, Project, UpdateProjectRequest } from "./types";
+import type {
+  ProjectsDto,
+  LoginResponse,
+  CreateProjectRequest,
+  Project,
+  UpdateProjectRequest,
+} from "./types";
 import { getToken } from "./auth";
 
 /** Structured error with optional field-level messages from ASP.NET validation */
@@ -49,16 +55,12 @@ export async function api<T>(path: string, init?: RequestInit): Promise<T> {
     // non-JSON response; leave json = undefined
   }
 
-  const isObj = (v: unknown): v is Record<string, unknown> =>
-    typeof v === "object" && v !== null;
+  const isObj = (v: unknown): v is Record<string, unknown> => typeof v === "object" && v !== null;
 
-  const title =
-    isObj(json) && typeof json.title === "string" ? json.title : undefined;
+  const title = isObj(json) && typeof json.title === "string" ? json.title : undefined;
 
   const fieldErrors =
-    isObj(json) && isObj(json.errors)
-      ? (json.errors as Record<string, string[]>)
-      : undefined;
+    isObj(json) && isObj(json.errors) ? (json.errors as Record<string, string[]>) : undefined;
 
   if (!res.ok) {
     const statusText = title || res.statusText || "Error";
@@ -79,7 +81,6 @@ export async function api<T>(path: string, init?: RequestInit): Promise<T> {
   // Fallback: parse now (should be JSON if ok)
   return (await res.json()) as T;
 }
-
 
 /** Convenience function for the Projects page */
 export function fetchProjects() {

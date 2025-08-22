@@ -82,12 +82,15 @@
   border-collapse: collapse;
   margin-top: 12px;
 }
-.th, .td {
+.th,
+.td {
   border: 1px solid var(--border);
   padding: 8px 10px;
   text-align: left;
 }
-.tr:hover { background: rgba(255,255,255,0.03); }
+.tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
 .small {
   color: var(--muted);
   font-size: 12px;
@@ -103,4 +106,3 @@
   font-size: 13px;
   margin-top: 6px;
 }
-

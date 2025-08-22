@@ -2,7 +2,14 @@ import { useState, useEffect } from "react";
 import type { FormEvent } from "react";
 import styles from "./admin.module.css";
 
-import { login, createProject, fetchProjects, updateProject, deleteProject, ApiError } from "../../lib/api";
+import {
+  login,
+  createProject,
+  fetchProjects,
+  updateProject,
+  deleteProject,
+  ApiError,
+} from "../../lib/api";
 import { setToken, clearToken, isAuthed } from "../../lib/auth";
 import type { Project, ProjectsDto } from "../../lib/types";
 
@@ -132,7 +139,10 @@ export default function AdminPage() {
     setFieldErrors({});
     setSubmitting(true);
     try {
-      const tech = techCsv.split(",").map(s => s.trim()).filter(Boolean);
+      const tech = techCsv
+        .split(",")
+        .map((s) => s.trim())
+        .filter(Boolean);
       const payload = {
         title: title.trim(),
         blurb: blurb.trim(),
@@ -199,7 +209,9 @@ export default function AdminPage() {
       ) : (
         <>
           <div className={styles.actions}>
-            <button className={styles.btn} onClick={handleLogout}>Log out</button>
+            <button className={styles.btn} onClick={handleLogout}>
+              Log out
+            </button>
           </div>
 
           <section className={styles.card} style={{ marginTop: 16 }}>
@@ -217,7 +229,9 @@ export default function AdminPage() {
                   onChange={(e) => setTitle(e.target.value)}
                 />
               </div>
-              {fieldErrors.title && <div className={styles.fieldError}>{fieldErrors.title.join(" ")}</div>}
+              {fieldErrors.title && (
+                <div className={styles.fieldError}>{fieldErrors.title.join(" ")}</div>
+              )}
 
               <div className={styles.row}>
                 <label htmlFor="blurb">Blurb</label>
@@ -228,7 +242,9 @@ export default function AdminPage() {
                   onChange={(e) => setBlurb(e.target.value)}
                 />
               </div>
-              {fieldErrors.blurb && <div className={styles.fieldError}>{fieldErrors.blurb.join(" ")}</div>}
+              {fieldErrors.blurb && (
+                <div className={styles.fieldError}>{fieldErrors.blurb.join(" ")}</div>
+              )}
 
               <div className={styles.row}>
                 <label htmlFor="tech">Tech (comma-separated)</label>
@@ -239,7 +255,9 @@ export default function AdminPage() {
                   onChange={(e) => setTechCsv(e.target.value)}
                 />
               </div>
-              {fieldErrors.tech && <div className={styles.fieldError}>{fieldErrors.tech.join(" ")}</div>}
+              {fieldErrors.tech && (
+                <div className={styles.fieldError}>{fieldErrors.tech.join(" ")}</div>
+              )}
 
               <div className={styles.row}>
                 <label htmlFor="year">Year</label>
@@ -251,7 +269,9 @@ export default function AdminPage() {
                   onChange={(e) => setYear(Number(e.target.value))}
                 />
               </div>
-              {fieldErrors.year && <div className={styles.fieldError}>{fieldErrors.year.join(" ")}</div>}
+              {fieldErrors.year && (
+                <div className={styles.fieldError}>{fieldErrors.year.join(" ")}</div>
+              )}
 
               <div className={styles.row}>
                 <label htmlFor="role">Role</label>
@@ -262,7 +282,9 @@ export default function AdminPage() {
                   onChange={(e) => setRole(e.target.value)}
                 />
               </div>
-              {fieldErrors.role && <div className={styles.fieldError}>{fieldErrors.role.join(" ")}</div>}
+              {fieldErrors.role && (
+                <div className={styles.fieldError}>{fieldErrors.role.join(" ")}</div>
+              )}
 
               <div className={styles.row}>
                 <label htmlFor="link">Link (optional)</label>
@@ -273,7 +295,9 @@ export default function AdminPage() {
                   onChange={(e) => setLink(e.target.value)}
                 />
               </div>
-              {fieldErrors.link && <div className={styles.fieldError}>{fieldErrors.link.join(" ")}</div>}
+              {fieldErrors.link && (
+                <div className={styles.fieldError}>{fieldErrors.link.join(" ")}</div>
+              )}
 
               <div className={styles.row}>
                 <label htmlFor="repo">Repo (optional)</label>
@@ -284,14 +308,24 @@ export default function AdminPage() {
                   onChange={(e) => setRepo(e.target.value)}
                 />
               </div>
-              {fieldErrors.repo && <div className={styles.fieldError}>{fieldErrors.repo.join(" ")}</div>}
+              {fieldErrors.repo && (
+                <div className={styles.fieldError}>{fieldErrors.repo.join(" ")}</div>
+              )}
 
               <div className={styles.actions}>
                 <button className={`${styles.btn} ${styles.btnAccent}`} disabled={submitting}>
-                  {submitting ? (editingId ? "Saving…" : "Creating…") : (editingId ? "Save" : "Create")}
+                  {submitting
+                    ? editingId
+                      ? "Saving…"
+                      : "Creating…"
+                    : editingId
+                      ? "Save"
+                      : "Create"}
                 </button>
                 {editingId && (
-                  <button type="button" className={styles.btn} onClick={resetForm}>Cancel edit</button>
+                  <button type="button" className={styles.btn} onClick={resetForm}>
+                    Cancel edit
+                  </button>
                 )}
               </div>
 
@@ -301,7 +335,9 @@ export default function AdminPage() {
           </section>
 
           <section className={styles.card} style={{ marginTop: 16 }}>
-            <h3 className={styles.heading} style={{ marginTop: 0 }}>Manage Projects</h3>
+            <h3 className={styles.heading} style={{ marginTop: 0 }}>
+              Manage Projects
+            </h3>
             {loading ? (
               <p className="subtle">Loading…</p>
             ) : listError ? (
@@ -317,7 +353,7 @@ export default function AdminPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {items.map(p => (
+                  {items.map((p) => (
                     <tr key={p.id} className={styles.tr}>
                       <td className={styles.td}>
                         <div>{p.title}</div>
@@ -326,8 +362,12 @@ export default function AdminPage() {
                       <td className={styles.td}>{p.year}</td>
                       <td className={styles.td}>{p.role}</td>
                       <td className={styles.td}>
-                        <button className={styles.btn} onClick={() => startEdit(p)}>Edit</button>{" "}
-                        <button className={styles.btn} onClick={() => handleDelete(p.id)}>Delete</button>
+                        <button className={styles.btn} onClick={() => startEdit(p)}>
+                          Edit
+                        </button>{" "}
+                        <button className={styles.btn} onClick={() => handleDelete(p.id)}>
+                          Delete
+                        </button>
                       </td>
                     </tr>
                   ))}

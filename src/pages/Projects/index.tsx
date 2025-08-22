@@ -67,6 +67,31 @@ export default function ProjectsPage() {
                   </span>
                 ))}
               </div>
+              {(p.link || p.repo) && (
+                <div className={styles.links}>
+                  {p.link?.trim() && (
+                    <a
+                      className={styles.btnLink}
+                      href={p.link}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      View Site
+                    </a>
+                  )}
+
+                  {p.repo?.trim() && (
+                    <a
+                      className={styles.btnSecondary}
+                      href={p.repo}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      View Code
+                    </a>
+                  )}
+                </div>
+              )}
             </article>
           ))}
         </div>
