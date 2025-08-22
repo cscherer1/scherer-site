@@ -30,3 +30,14 @@ export type CreateProjectRequest = {
   link?: string;
   repo?: string;
 };
+
+// === Update Project ===
+export type UpdateProjectRequest = {
+  title: string;
+  blurb: string;
+  tech: string[];
+  year: number;
+  role: string;
+  link?: string;
+  repo?: string;
+};

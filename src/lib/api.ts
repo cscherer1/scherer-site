@@ -1,5 +1,5 @@
 // src/lib/api.ts
-import type { ProjectsDto, LoginResponse, CreateProjectRequest, Project } from "./types";
+import type { ProjectsDto, LoginResponse, CreateProjectRequest, Project, UpdateProjectRequest } from "./types";
 import { getToken } from "./auth";
 
 const API_BASE = import.meta.env.VITE_API_URL ?? "";
@@ -47,5 +47,20 @@ export function createProject(payload: CreateProjectRequest) {
   return api<Project>("/api/projects", {
     method: "POST",
     body: JSON.stringify(payload),
+  });
+}
+
+/** PUT /api/projects/{id} - Updates a project (requires token) */
+export function updateProject(id: string, payload: UpdateProjectRequest) {
+  return api<Project>(`/api/projects/${encodeURIComponent(id)}`, {
+    method: "PUT",
+    body: JSON.stringify(payload),
+  });
+}
+
+/** Delete /api/projects/{id} - Deletes a project (requires token) */
+export function deleteProject(id: string) {
+  return api<void>(`/api/projects/${encodeURIComponent(id)}`, {
+    method: "DELETE",
   });
 }
