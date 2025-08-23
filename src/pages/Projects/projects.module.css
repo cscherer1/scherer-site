@@ -71,9 +71,9 @@
 .btnLink,
 .btnSecondary {
   display: inline-block;
-  padding: 0.3rem 0.6rem;   /* smaller padding */
-  font-size: 0.85rem;       /* slightly smaller text */
-  border-radius: 0.5rem;    /* softer instead of full pill */
+  padding: 0.3rem 0.6rem; /* smaller padding */
+  font-size: 0.85rem; /* slightly smaller text */
+  border-radius: 0.5rem; /* softer instead of full pill */
   font-weight: 500;
   text-decoration: none;
   border: 1px solid transparent;

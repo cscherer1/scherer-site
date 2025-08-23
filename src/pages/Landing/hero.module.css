@@ -1,32 +1,121 @@
-.main {
+.hero {
+  position: relative;
+  padding: 96px 0 72px;
+  overflow: hidden;
+}
+
+.wrap {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 32px 16px 64px;
+  padding: 0 16px;
+}
+
+.glow {
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(60% 60% at 50% 40%, rgba(60, 120, 255, 0.15), rgba(0, 0, 0, 0));
+  filter: blur(40px);
+  animation: float 12s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .title {
-  margin: 0;
-  font-size: 28px;
-  letter-spacing: 0.3px;
+  margin: 8px 0 12px;
+  font-size: clamp(36px, 6vw, 64px);
+  line-height: 1.05;
+  background: linear-gradient(90deg, #ffffff, #7aaaff 60%, #9ef7d6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-.role {
-  margin: 2px 0 0;
+.summary {
+  color: var(--muted);
+  font-size: clamp(16px, 2.4vw, 18px);
+  max-width: 72ch;
 }
 
-.tagline {
-  margin-top: 16px;
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0 0;
+}
+
+.pill {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+.actions {
+  margin-top: 24px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .cta {
   display: inline-block;
-  margin-top: 12px;
-  padding: 10px 16px;
-  border: 1px solid #2a2a2a;
-  border-radius: 8px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: 1px solid var(--accent);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
   text-decoration: none;
+  color: var(--text);
 }
 
-.section {
-  margin-top: 48px;
+.ghost {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  text-decoration: none;
+  color: var(--text);
+}
+
+.socials {
+  margin-top: 28px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.socials a {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.25);
+}
+
+@media (max-width: 480px) {
+  .actions {
+    gap: 10px;
+  }
+  .cta,
+  .ghost {
+    width: 100%;
+    text-align: center;
+  }
 }
