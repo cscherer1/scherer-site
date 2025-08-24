@@ -51,7 +51,7 @@ export default function ProjectsPage() {
 
       <header className={styles.header}>
         <div className={styles.eyebrow}>Projects</div>
-        <h1 className={`${styles.heading} sectionTitle`}>{data?.heading ?? "Selected Work"}</h1>
+        <h1 className={`${styles.heading} sectionTitle`}>{"Selected Work"}</h1>
         <p className={styles.blurb}>
           A mix of professional and
           personal work. Built with pragmatic patterns, clean code, and a focus on maintainability.
