@@ -13,10 +13,11 @@ cd .\scherer-site
 pnpm install
 Create a .env file with the API URL you want to use.
 echo VITE_API_URL=https://localhost:7210
- > .env
-Start the dev server.
-pnpm dev --host
-Open http://localhost:5173
+
+> .env
+> Start the dev server.
+> pnpm dev --host
+> Open http://localhost:5173
 
 BUILD AND PREVIEW
 Build a production bundle.
@@ -60,7 +61,7 @@ src/pages contains Landing, Projects, About, Contact, Admin, and NotFound.
 src/components contains shared UI such as Header, Footer, and ProjectCard.
 src/lib contains api.ts, auth.ts, and types.ts.
 public contains index.html, robots.txt, sitemap.xml, favicon files, and og.png.
-styles are component-scoped with *.module.css plus a global index.css for variables.
+styles are component-scoped with \*.module.css plus a global index.css for variables.
 
 API INTEGRATION
 All API calls go through src/lib/api.ts. The base URL is read from VITE_API_URL. The Authorization header is attached automatically when a JWT token is present in memory. To change or add endpoints, extend api.ts and types.ts.

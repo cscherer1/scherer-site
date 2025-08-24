@@ -45,56 +45,74 @@ export default function ProjectsPage() {
 
   return (
     <main className={styles.main}>
-      <h2 className={styles.heading}>{data?.heading ?? "Projects"}</h2>
+      {/* subtle background like landing */}
+      <div className={styles.bgGlow} aria-hidden="true" />
+      <div className={styles.bgAurora} aria-hidden="true" />
 
-      {!apiBase && <p className="subtle">Using local fallback content (API URL not configured).</p>}
-      {error && <p className="subtle">Using fallback — API error: {error}</p>}
-      {loading && !data && <p className="subtle">Loading…</p>}
+      <header className={styles.header}>
+        <div className={styles.eyebrow}>Projects</div>
+        <h1 className={`${styles.heading} sectionTitle`}>{data?.heading ?? "Projects"}</h1>
+        <p className={styles.blurb}>
+          A mix of professional and
+          personal work. Built with pragmatic patterns, clean code, and a focus on maintainability.
+        </p>
+      </header>
+
+      {!apiBase && (
+        <div className={styles.state}>Using local fallback content (API URL not configured).</div>
+      )}
+      {error && <div className={styles.state}>Using fallback — API error: {error}</div>}
+      {loading && !data && <div className={styles.state}>Loading…</div>}
 
       {data && (
-        <div className={styles.grid}>
+        <ul className={styles.grid}>
           {data.items.map((p) => (
-            <article key={p.id} className={styles.card}>
-              <h3 className={styles.title}>{p.title}</h3>
+            <li key={p.id} className={styles.card}>
+              <div className={styles.cardTitleRow}>
+                <div className={styles.cardTitle}>{p.title}</div>
+                <span className={styles.dates}>{p.year}</span>
+              </div>
+
               <div className={styles.meta}>
-                {p.year} · {p.role}
+                <span className={styles.role}>{p.role}</span>
+                <ul className={styles.chips}>
+                  {(p.tech ?? []).slice(0, 5).map((t, i) => (
+                    <li key={i} className={styles.chip}>
+                      {t}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <p className={styles.blurb}>{p.blurb}</p>
-              <div className={styles.tags}>
-                {p.tech.map((t) => (
-                  <span key={t} className={styles.tag}>
-                    {t}
-                  </span>
-                ))}
-              </div>
-              {(p.link || p.repo) && (
-                <div className={styles.links}>
+
+              <p className={styles.cardBlurb}>{p.blurb}</p>
+
+              {(p.link?.trim() || p.repo?.trim()) && (
+                <div className={styles.cardFooter}>
                   {p.link?.trim() && (
                     <a
-                      className={styles.btnLink}
+                      className={styles.btn}
                       href={p.link}
                       target="_blank"
                       rel="noreferrer noopener"
                     >
-                      View Site
+                      Live
                     </a>
                   )}
-
                   {p.repo?.trim() && (
                     <a
-                      className={styles.btnSecondary}
+                      className={styles.btn}
                       href={p.repo}
                       target="_blank"
                       rel="noreferrer noopener"
                     >
-                      View Code
+                      Repo
                     </a>
                   )}
                 </div>
               )}
-            </article>
+            </li>
           ))}
-        </div>
+        </ul>
       )}
     </main>
   );

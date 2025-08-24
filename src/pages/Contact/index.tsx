@@ -1,36 +1,48 @@
-import { contactContent } from "./content";
 import styles from "./contact.module.css";
+import { contactContent } from "./content"; // assumes you already have this
 
 export default function ContactPage() {
+  const c = contactContent;
+
   return (
     <main className={styles.main}>
-      <h2 className={styles.heading}>{contactContent.heading}</h2>
+      <div className={styles.bgGlow} aria-hidden="true" />
+      <div className={styles.bgAurora} aria-hidden="true" />
 
-      <div className={styles.row}>
-        <span className={styles.label}>Email</span>
-        <span className={styles.value}>
-          <a href={`mailto:${contactContent.email}`}>{contactContent.email}</a>
-        </span>
-      </div>
+      <header className={styles.header}>
+        <div className={styles.eyebrow}>Contact</div>
+        <h1 className={`${styles.heading} sectionTitle`}>Get in Touch</h1>
+        <p className={styles.blurb}>
+          Open to in-office, hybrid, or remote full-time roles. Email preferred for first contact.
+        </p>
+      </header>
 
-      <div className={styles.row}>
-        <span className={styles.label}>Phone</span>
-        <span className={styles.value}>{contactContent.phone}</span>
-      </div>
+      <section className={styles.grid}>
+        <div className={styles.item}>
+          <div className={styles.label}>Email</div>
+          <a className={styles.link} href={`mailto:${c.email}`}>
+            {c.email}
+          </a>
+        </div>
+        <div className={styles.item}>
+          <div className={styles.label}>Phone</div>
+          <a className={styles.link} href={`tel:${c.phone}`}>
+            {c.phone}
+          </a>
+        </div>
+        <div className={styles.item}>
+          <div className={styles.label}>Location</div>
+          <div>{c.location}</div>
+        </div>
+      </section>
 
-      <div className={styles.row}>
-        <span className={styles.label}>Location</span>
-        <span className={styles.value}>{contactContent.location}</span>
-      </div>
-      <ul>
-        {contactContent.note.map((n, i) => (
-          <li key={i} className={styles.awardRow}>
-            <span>
-              <span className={styles.note}>{n}</span>
-            </span>
-          </li>
-        ))}
-      </ul>
+      {c.note?.length ? (
+        <ul className={styles.notes}>
+          {c.note.map((n, i) => (
+            <li key={i}>{n}</li>
+          ))}
+        </ul>
+      ) : null}
     </main>
   );
 }

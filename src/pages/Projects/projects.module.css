@@ -1,81 +1,194 @@
 .main {
+  position: relative;
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 32px 16px 64px;
+  padding: 36px 16px 72px;
+  overflow: hidden;
+  isolation: isolate;
 }
 
+/* subtle background to match landing */
+.bgGlow {
+  position: absolute;
+  inset: -25%;
+  background: radial-gradient(60% 60% at 50% 40%, rgba(60, 120, 255, 0.06), rgba(0, 0, 0, 0));
+  filter: blur(50px);
+  z-index: -2;
+  pointer-events: none;
+}
+.bgAurora {
+  position: absolute;
+  inset: -30%;
+  filter: blur(95px);
+  opacity: 0.28;
+  z-index: -1;
+  pointer-events: none;
+}
+.bgAurora::before,
+.bgAurora::after {
+  content: "";
+  position: absolute;
+  inset: -10%;
+  border-radius: 40%;
+  background: conic-gradient(
+    from 0deg at 35% 50%,
+    rgba(110, 180, 255, 0.1),
+    rgba(158, 247, 214, 0.18),
+    rgba(110, 180, 255, 0.1),
+    rgba(255, 255, 255, 0.05),
+    rgba(110, 180, 255, 0.1)
+  );
+  animation: spin 60s linear infinite;
+}
+.bgAurora::after {
+  background: conic-gradient(
+    from 90deg at 60% 50%,
+    rgba(255, 178, 102, 0.12),
+    rgba(110, 180, 255, 0.1),
+    rgba(245, 116, 185, 0.12),
+    rgba(255, 255, 255, 0.05),
+    rgba(110, 180, 255, 0.1)
+  );
+  animation-duration: 85s;
+  animation-direction: reverse;
+}
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bgAurora::before,
+  .bgAurora::after {
+    animation: none !important;
+  }
+}
+
+/* header */
+.header {
+  margin-bottom: 16px;
+}
+.eyebrow {
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
 .heading {
-  margin-top: 0;
+  margin: 0 0 8px;
+  font-size: clamp(28px, 4.4vw, 38px);
+  line-height: 1.15;
+}
+.blurb {
+  color: var(--muted);
+  margin: 0 0 12px;
+  max-width: 80ch;
 }
 
+/* grid and cards */
 .grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: grid;
+  grid-template-columns: repeat(12, 1fr);
   gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  margin-top: 16px;
+}
+@media (max-width: 920px) {
+  .grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .card {
+  grid-column: span 6;
   border: 1px solid var(--border);
-  background: var(--panel);
+  background: rgba(255, 255, 255, 0.03);
   border-radius: 12px;
-  padding: 16px;
+  padding: 14px;
 }
-
-.title {
-  margin: 0 0 6px 0;
-}
-
-.blurb {
-  margin: 0 0 12px 0;
-  color: var(--subtle);
-}
-
-.tags {
+.cardTitleRow {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
   gap: 8px;
 }
-
-.tag {
-  font-size: 12px;
-  padding: 4px 8px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
+.cardTitle {
+  font-weight: 600;
+}
+.dates {
   color: var(--muted);
+  font-size: 13px;
 }
 
 .meta {
-  color: var(--muted);
-  font-size: 13px;
-  margin: 0 0 8px 0;
-}
-
-.links {
-  margin-top: 0.75rem;
   display: flex;
-  gap: 0.5rem;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  margin: 6px 0 8px;
+}
+.role {
+  color: var(--muted);
+}
+
+.chips {
+  display: flex;
   flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+}
+.chip {
+  list-style: none;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 13px;
+  transition:
+    transform 0.12s ease,
+    background-color 0.12s ease;
+}
+.chip:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.05);
 }
 
-.btnLink,
-.btnSecondary {
-  display: inline-block;
-  padding: 0.45rem 0.75rem;
-  border-radius: 9999px;
-  font-weight: 600;
-  text-decoration: none;
-  border: 1px solid var(--border, #333);
+.cardBlurb {
+  color: var(--muted);
+  margin: 0 0 10px;
 }
 
-.btnLink,
-.btnSecondary {
+.cardFooter {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+.btn {
   display: inline-block;
-  padding: 0.3rem 0.6rem; /* smaller padding */
-  font-size: 0.85rem; /* slightly smaller text */
-  border-radius: 0.5rem; /* softer instead of full pill */
-  font-weight: 500;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  color: var(--text);
   text-decoration: none;
-  border: 1px solid transparent;
-  transition: all 0.2s ease;
+  background: rgba(255, 255, 255, 0.03);
+  transition:
+    transform 0.12s ease,
+    background-color 0.12s ease;
+}
+.btn:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.state {
+  color: var(--muted);
+  padding: 16px 0;
 }

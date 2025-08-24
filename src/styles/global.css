@@ -63,3 +63,18 @@ a:hover {
 .sep {
   border-color: var(--border);
 }
+
+/* Section titles – consistent across pages */
+h1,
+h2.sectionTitle {
+  background: linear-gradient(90deg, #e6e9f2, #8fb5ff 50%, #a9eed8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* If any h1 should NOT be gradient, add class "plainTitle" to it */
+.plainTitle {
+  background: none !important;
+  color: var(--text) !important;
+}

@@ -13,6 +13,7 @@ export default function Hero() {
   return (
     <section className={styles.hero} aria-labelledby="intro-heading">
       <div className={styles.glow} aria-hidden="true" />
+      <div className={styles.aurora} aria-hidden="true" />
       <div className={styles.wrap}>
         <div className={styles.eyebrow}>{roles}</div>
         <h1 id="intro-heading" className={styles.title}>
