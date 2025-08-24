@@ -27,7 +27,38 @@ export default function AboutPage() {
           {/* gradient ink matches landing (uses global .sectionTitle) */}
           <h1 className={`${styles.heading} sectionTitle`}>{a.heading}</h1>
           <p className={styles.blurb}>{a.blurb}</p>
+          {/* Actions: download / open in new tab */}
+          <div className={styles.actions}>
+            <a
+              className={styles.btn}
+              href="/Christian_Scherer_Resume.pdf"
+              download="Christian_Scherer_Resume.pdf"
+            >
+              Download Résumé (PDF)
+            </a>
 
+            <a
+              className={styles.btnSecondary}
+              href="/Christian_Scherer_Resume.pdf"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Open in New Tab
+            </a>
+          </div>
+
+          {/* Optional: inline preview (collapsible) */}
+          <details className={styles.resume}>
+            <summary className={styles.resumeSummary}>Preview résumé (inline)</summary>
+            <div className={styles.embed}>
+              <iframe
+                className={styles.embedFrame}
+                src="/Christian_Scherer_Resume.pdf#toolbar=0&navpanes=0&view=FitH"
+                title="Christian Scherer — Résumé PDF"
+                loading="lazy"
+              />
+            </div>
+          </details>
           <ul className={styles.list}>
             {a.highlights.map((item, i) => (
               <li key={i}>{item}</li>

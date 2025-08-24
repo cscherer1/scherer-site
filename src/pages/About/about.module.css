@@ -306,3 +306,72 @@
   transform: translateY(-1px);
   background: rgba(255, 255, 255, 0.05);
 }
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0 6px;
+  flex-wrap: wrap;
+}
+
+.btn,
+.btnSecondary {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  transition:
+    transform 0.12s ease,
+    background-color 0.12s ease;
+}
+
+.btn {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+}
+.btn:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.btnSecondary {
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.02);
+}
+.btnSecondary:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Inline preview */
+.resume {
+  margin-top: 10px;
+}
+.resumeSummary {
+  cursor: pointer;
+  color: var(--muted);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.25);
+  display: inline-block;
+  padding-bottom: 2px;
+}
+.resume[open] .resumeSummary {
+  color: var(--text);
+  border-bottom-color: rgba(255, 255, 255, 0.45);
+}
+
+.embed {
+  margin-top: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Use a tall frame; mobiles often need extra height */
+.embedFrame {
+  width: 100%;
+  height: min(80vh, 1200px);
+  border: 0;
+  background: #111;
+}

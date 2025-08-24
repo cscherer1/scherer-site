@@ -53,8 +53,8 @@ export default function ProjectsPage() {
         <div className={styles.eyebrow}>Projects</div>
         <h1 className={`${styles.heading} sectionTitle`}>{"Selected Work"}</h1>
         <p className={styles.blurb}>
-          A mix of professional and
-          personal work. Built with pragmatic patterns, clean code, and a focus on maintainability.
+          A mix of professional and personal work. Built with pragmatic patterns, clean code, and a
+          focus on maintainability.
         </p>
       </header>
 
