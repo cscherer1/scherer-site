@@ -1,5 +1,5 @@
 import styles from "./contact.module.css";
-import { contactContent } from "./content"; // assumes you already have this
+import { contactContent } from "./content";
 
 export default function ContactPage() {
   const c = contactContent;
