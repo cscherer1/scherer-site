@@ -31,15 +31,15 @@ export default function AboutPage() {
           <div className={styles.actions}>
             <a
               className={styles.btn}
-              href="/Christian_Scherer_Resume.pdf"
-              download="Christian_Scherer_Resume.pdf"
+              href="/Christian_Scherer_Resume_London.pdf"
+              download="Christian_Scherer_Resume_London.pdf"
             >
               Download Résumé (PDF)
             </a>
 
             <a
               className={styles.btnSecondary}
-              href="/Christian_Scherer_Resume.pdf"
+              href="/Christian_Scherer_Resume_London.pdf"
               target="_blank"
               rel="noreferrer noopener"
             >
