@@ -1,7 +1,8 @@
 export type ContactContent = {
   heading: string;
   email: string;
-  phone: string;
+  "US Phone": string;
+  "UK Phone": string;
   location: string;
   note: string[];
 };
@@ -9,11 +10,13 @@ export type ContactContent = {
 export const contactContent: ContactContent = {
   heading: "Contact",
   email: "cschere1@gmail.com",
-  phone: "+1 (910) 333-7347",
+  "US Phone": "+1 (910) 333-7347",
+  "UK Phone": "+44 7522 346480",
   location: "Kansas City, MO",
+
   note: [
     "Open to In-office, Hybrid, or Remote full-time positions.",
-    "UK passport holder planning relocation to London.",
+    "UK passport holder relocating to Brighton.",
     "Prefer email for first contact. I typically reply within 24 hours.",
   ],
 };
