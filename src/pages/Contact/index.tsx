@@ -24,15 +24,21 @@ export default function ContactPage() {
             {c.email}
           </a>
         </div>
+
         <div className={styles.item}>
-          <div className={styles.label}>Phone</div>
+          <div className={styles.label}>US Phone</div>
           <a className={styles.link} href={`tel:${c["US Phone"]}`}>
             {c["US Phone"]}
           </a>
-            <a className={styles.link} href={`tel:${c["UK Phone"]}`}>
-            {c["UK Phone"]}
-          </a>
         </div>
+
+        <div className={styles.item}>
+        <div className={styles.label}>UK Phone</div>
+          <a className={styles.link} href={`tel:${c["UK Phone"]}`}>
+            {c["UK Phone"]}
+        </a>
+        </div>
+        
         <div className={styles.item}>
           <div className={styles.label}>Location</div>
           <div>{c.location}</div>
