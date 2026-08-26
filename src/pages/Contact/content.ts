@@ -16,7 +16,7 @@ export const contactContent: ContactContent = {
 
   note: [
     "Open to In-office, Hybrid, or Remote full-time positions.",
-    "UK passport holder relocating to Brighton.",
+    "UK passport holder relocating to Brighton/Greater London area.",
     "Prefer email for first contact. I typically reply within 24 hours.",
   ],
 };
