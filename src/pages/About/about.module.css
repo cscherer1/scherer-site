@@ -362,16 +362,36 @@
 
 .embed {
   margin-top: 12px;
+}
+
+/* Each PDF page rendered as a canvas, stacked vertically. */
+.pdfEmbed {
+  width: 100%;
+}
+.pdfPages {
   border: 1px solid var(--border);
   background: rgba(255, 255, 255, 0.03);
   border-radius: 12px;
   overflow: hidden;
-}
-
-/* Use a tall frame; mobiles often need extra height */
-.embedFrame {
   width: 100%;
-  height: min(80vh, 1200px);
-  border: 0;
-  background: #111;
+}
+.pdfPageCanvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.pdfPageCanvas + .pdfPageCanvas {
+  border-top: 3px solid rgba(255, 255, 255, 0.2);
+}
+.pdfStatus {
+  padding: 28px 16px;
+  text-align: center;
+  color: var(--muted);
+  border: 1px dashed rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  font-size: 0.9rem;
+}
+.pdfStatus a {
+  color: var(--accent, #7aa2ff);
+  text-decoration: underline;
 }
