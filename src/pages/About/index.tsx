@@ -1,6 +1,7 @@
 import { aboutContent } from "./content";
 import styles from "./about.module.css";
 import profilePic from "../../assets/profile.jpg";
+import ResumePreview from "./ResumePreview";
 
 // Cache-bust the inline resume preview so the embedded PDF viewer always
 // refetches the latest file (browser PDF plugins otherwise reuse a stale
@@ -57,11 +58,9 @@ export default function AboutPage() {
           <details className={styles.resume}>
             <summary className={styles.resumeSummary}>Preview résumé (inline)</summary>
             <div className={styles.embed}>
-              <iframe
-                className={styles.embedFrame}
-                src={`/Christian_Scherer_Resume.pdf?v=${RESUME_BUST}#toolbar=0&navpanes=0&view=FitH`}
-                title="Christian Scherer — Résumé PDF"
-                loading="lazy"
+              <ResumePreview
+                src={`/Christian_Scherer_Resume.pdf?v=${RESUME_BUST}`}
+                fallbackUrl="/Christian_Scherer_Resume.pdf"
               />
             </div>
           </details>
