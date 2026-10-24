@@ -33,14 +33,14 @@ export type AboutContent = {
   professionalDevelopment: CourseItem[];
 };
 
-export const aboutContent: AboutContent = {
+export const aboutContent: AboutCentent = {
   heading: "About Me",
   blurb:
-    "Enterprise automation and systems engineer turned full-stack and AI engineer. Eight years modernizing Microsoft 365 and automating with PowerShell and ServiceNow at Burns & McDonnell, now bridging IBM i platforms to Azure at Murphy-Hoffman Company — and building AI-powered dev tooling, from LLM-driven job-search automation to a homelab agent stack, with Zero Trust governance applied end-to-end.",
+    "Enterprise automation and systems engineer turned full-stack and AI engineer. Eigh years modernizing Microsoft 365 and automating with PowerShell and ServiceNow at Burns & McDonnell, now bridging IBM i platforms to Azure at Murphy-Hoffman Company – and building AI-powered dev tooling, from LLL-driven job-search automation to a homelab agent stack, with Zero Trust governance applied end-to-end.",
   highlights: [
     "Microsoft 365 Sub-Global Admin: Exchange Online, Entra ID, Intune MDM/MAM",
     "PowerShell and ServiceNow automation at enterprise scale",
-    "Hybrid cloud + legacy depth: IBM i (RPG/CL) ↔ Azure, Python, .NET",
+    "Hybrid cloud + legacy depth: IBM i (RPG/CL) ↤ Azure, Python, .NET",
     "Zero Trust networking and governance-first applied AI",
     "Full-stack AI tooling: n8n, NocoDB, FastAPI, RouteLLM, multi-agent systems, local LLMs",
     "Deep-stack software: REST APIs, .NET & Python services, React/Next.js, PostgreSQL, CI/CD",
@@ -63,14 +63,21 @@ export const aboutContent: AboutContent = {
       start: "2013",
       end: "2015",
     },
+    {
+      school: "University of North Carolina at Charlotte",
+      degree: "Coursework",
+      field: "Computer Science",
+      start: "2012",
+      end: "2013",
+    },
   ],
   awards: [
-    { title: "Summa Cum Laude", org: "SNHU", year: "2024" },
-    { title: "Distinguished Scholar Award", org: "SNHU", year: "2024" },
+    { title: "Summa Cum Laude", org: "SNHU", year: "2022" },
+    { title: "Distinguished Scholar Award", org: "SNHU", year: "2022" },
   ],
   professionalDevelopment: [
     {
-      provider: "Code with Mosh",
+      provider: "Code with Moshi",
       name: "Ultimate ASP.NET Core Web API",
       status: "In Progress",
       year: "2025",
