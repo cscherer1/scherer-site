@@ -43,6 +43,7 @@ export const aboutContent: AboutContent = {
     "Hybrid cloud + legacy depth: IBM i (RPG/CL) ↔ Azure, Python, .NET",
     "Zero Trust networking and governance-first applied AI",
     "Full-stack AI tooling: n8n, NocoDB, FastAPI, RouteLLM, multi-agent systems, local LLMs",
+    "Deep-stack software: REST APIs, .NET & Python services, React/Next.js, PostgreSQL, CI/CD",
   ],
 
   // New sections
