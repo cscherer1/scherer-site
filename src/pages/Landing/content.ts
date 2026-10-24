@@ -11,9 +11,9 @@ export type LandingContent = {
 
 export const landingContent: LandingContent = {
   owner: "Christian Scherer",
-  roles: "Enterprise Automation & AI Systems Engineer",
+  roles: "Full-Stack & AI Systems Engineer — Enterprise Automation, Cloud & Zero Trust",
   summary:
-    "I automate and govern enterprise platforms: Microsoft 365 administration, Intune and Entra ID, PowerShell at scale, Zero Trust networking, and IBM i modernisation bridged to Azure. Now building full-stack and AI tooling — n8n and LLM pipelines, RouteLLM routing, agent stacks — deployed governance-first.",
+    "Full-stack and AI systems engineer: I build software, automation, and AI tooling that runs enterprises. Eight years modernizing Microsoft 365, ServiceNow, and IBM i platforms; REST APIs and .NET/Python services; n8n and LLM pipelines, RouteLLM routing, and agent stacks — all deployed governance-first under Zero Trust.",
   specialties: [
     "M365",
     "Intune",
@@ -33,6 +33,13 @@ export const landingContent: LandingContent = {
     "FastAPI",
     "LLMs",
     "RouteLLM",
+    "RAG",
+    "React",
+    "Next.js",
+    "PostgreSQL",
+    "REST APIs",
+    "CI/CD",
+    "GitHub Actions",
   ],
   cta: { label: "View Projects", href: "/projects" },
   ctaSecondary: { label: "Contact Me", href: "/contact" },
