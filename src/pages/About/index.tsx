@@ -2,6 +2,12 @@ import { aboutContent } from "./content";
 import styles from "./about.module.css";
 import profilePic from "../../assets/profile.jpg";
 
+// Cache-bust the inline resume preview so the embedded PDF viewer always
+// refetches the latest file (browser PDF plugins otherwise reuse a stale
+// cached copy). Value = the resume PDF's git object SHA; bump it whenever
+// the resume is re-generated.
+const RESUME_BUST = "3bfe3279217752cfd2206616f6ba6685b42f6bb9";
+
 export default function AboutPage() {
   const a = aboutContent;
 
@@ -53,7 +59,7 @@ export default function AboutPage() {
             <div className={styles.embed}>
               <iframe
                 className={styles.embedFrame}
-                src="/Christian_Scherer_Resume.pdf#toolbar=0&navpanes=0&view=FitH"
+                src={`/Christian_Scherer_Resume.pdf?v=${RESUME_BUST}#toolbar=0&navpanes=0&view=FitH`}
                 title="Christian Scherer — Résumé PDF"
                 loading="lazy"
               />
