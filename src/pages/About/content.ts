@@ -36,7 +36,7 @@ export type AboutContent = {
 export const aboutContent: AboutContent = {
   heading: "About Me",
   blurb:
-    "Enterprise automation and systems engineer turned full-stack and AI engineer. Eight years modernizing Microsoft 365 and automating with PowerShell and ServiceNow at Burns & McDonnell, now bridging IBM i platforms to Azure at Murphy-Hoffman Company — and building AI-powered dev tooling, from LLM-driven job-search automation to a homelab agent stack, with Zero Trust governance applied end-to-end.",
+    "Enterprise automation and systems engineer turned full-stack and AI engineer. Eight years modernizing Microsoft 365 and automating with PowerShell and ServiceNow at Burns & McDonnell, now bridging IBM i platforms to Azure at Murphy-Hoffman Company – and building AI-powered dev tooling, from LLM-driven job-search automation to a homelab agent stack, with Zero Trust governance applied end-to-end.",
   highlights: [
     "Microsoft 365 Sub-Global Admin: Exchange Online, Entra ID, Intune MDM/MAM",
     "PowerShell and ServiceNow automation at enterprise scale",
@@ -63,10 +63,17 @@ export const aboutContent: AboutContent = {
       start: "2013",
       end: "2015",
     },
+    {
+      school: "University of North Carolina at Charlotte",
+      degree: "Coursework",
+      field: "Computer Science",
+      start: "2012",
+      end: "2013",
+    },
   ],
   awards: [
-    { title: "Summa Cum Laude", org: "SNHU", year: "2024" },
-    { title: "Distinguished Scholar Award", org: "SNHU", year: "2024" },
+    { title: "Summa Cum Laude", org: "SNHU", year: "2022" },
+    { title: "Distinguished Scholar Award", org: "SNHU", year: "2022" },
   ],
   professionalDevelopment: [
     {
