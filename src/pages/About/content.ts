@@ -36,12 +36,13 @@ export type AboutContent = {
 export const aboutContent: AboutContent = {
   heading: "About Me",
   blurb:
-    "Enterprise automation and systems engineer. Eight years governing Microsoft 365 and automating with PowerShell and ServiceNow at Burns & McDonnell, now bridging IBM i platforms to Azure at Murphy-Hoffman Company.",
+    "Enterprise automation and systems engineer turned full-stack and AI engineer. Eight years modernizing Microsoft 365 and automating with PowerShell and ServiceNow at Burns & McDonnell, now bridging IBM i platforms to Azure at Murphy-Hoffman Company — and building AI-powered dev tooling, from LLM-driven job-search automation to a homelab agent stack, with Zero Trust governance applied end-to-end.",
   highlights: [
     "Microsoft 365 Sub-Global Admin: Exchange Online, Entra ID, Intune MDM/MAM",
     "PowerShell and ServiceNow automation at enterprise scale",
     "Hybrid cloud + legacy depth: IBM i (RPG/CL) ↔ Azure, Python, .NET",
     "Zero Trust networking and governance-first applied AI",
+    "Full-stack AI tooling: n8n, NocoDB, FastAPI, RouteLLM, multi-agent systems, local LLMs",
   ],
 
   // New sections

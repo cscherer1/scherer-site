@@ -11,9 +11,9 @@ export type LandingContent = {
 
 export const landingContent: LandingContent = {
   owner: "Christian Scherer",
-  roles: "Enterprise Automation & Systems Engineer",
+  roles: "Enterprise Automation & AI Systems Engineer",
   summary:
-    "I automate and govern enterprise platforms: Microsoft 365 administration, Intune and Entra ID, PowerShell at scale, Zero Trust networking, and IBM i modernisation bridged to Azure. Applied AI, deployed governance-first.",
+    "I automate and govern enterprise platforms: Microsoft 365 administration, Intune and Entra ID, PowerShell at scale, Zero Trust networking, and IBM i modernisation bridged to Azure. Now building full-stack and AI tooling — n8n and LLM pipelines, RouteLLM routing, agent stacks — deployed governance-first.",
   specialties: [
     "M365",
     "Intune",
@@ -29,6 +29,10 @@ export const landingContent: LandingContent = {
     ".NET",
     "TypeScript",
     "Linux",
+    "n8n",
+    "FastAPI",
+    "LLMs",
+    "RouteLLM",
   ],
   cta: { label: "View Projects", href: "/projects" },
   ctaSecondary: { label: "Contact Me", href: "/contact" },
