@@ -18,6 +18,26 @@ export const projectsContent: ProjectsContent = {
   heading: "Projects",
   items: [
     {
+      id: "job-search-automation-dashboard",
+      title: "Job Search Automation Dashboard",
+      blurb:
+        "Automated job-search pipeline that scrapes live postings daily (JobSpy), builds a verified skill inventory with evidence, and uses LLM-powered evaluation to score fit against real, provable experience before generating tailored resume PDFs and cover letters. Orchestrated with n8n on Docker, data in NocoDB, dashboard in Python/FastAPI.",
+      tech: ["n8n", "NocoDB", "JobSpy", "Python", "LLM", "Docker", "FastAPI"],
+      year: 2026,
+      role: "Systems & AI Engineer · Personal",
+      link: "https://jobdashboard.christianscherer.dev",
+    },
+    {
+      id: "routellm-cli-development-pipeline",
+      title: "RouteLLM CLI in the Development Pipeline",
+      blurb:
+        "Integrated the RouteLLM CLI — an OpenAI-compatible LLM routing gateway — into the development pipeline, giving every agentic and automation workflow a single unified endpoint that routes each request to the best model for the job.",
+      tech: ["RouteLLM", "LLM", "OpenAI-compatible API", "CLI", "Python", "Automation"],
+      year: 2026,
+      role: "Systems & AI Engineer · Personal",
+      link: "https://routellm.abacus.ai",
+    },
+    {
       id: "ibmi-azure-bridge",
       title: "IBM i ↔ Azure Integration Bridges",
       blurb:
