@@ -8,6 +8,7 @@ import AboutPage from "./pages/About";
 import ContactPage from "./pages/Contact";
 import NotFoundPage from "./pages/NotFound";
 import ProjectsPage from "./pages/Projects";
+import CaseStudyPage from "./pages/CaseStudy/CaseStudyPage";
 import AdminPage from "./pages/Admin";
 
 const router = createBrowserRouter([
@@ -17,6 +18,8 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <LandingPage /> }, // /
       { path: "projects", element: <ProjectsPage /> }, // /projects
+      { path: "projects/jobdashboard", element: <CaseStudyPage slug="jobdashboard" /> }, // /projects/jobdashboard
+      { path: "projects/ouroborn", element: <CaseStudyPage slug="ouroborn" /> }, // /projects/ouroborn
       { path: "about", element: <AboutPage /> }, // /about
       { path: "contact", element: <ContactPage /> }, // /contact
       { path: "admin", element: <AdminPage /> }, // /admin (hidden)
