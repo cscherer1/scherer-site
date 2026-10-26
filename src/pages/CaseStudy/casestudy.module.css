@@ -1,0 +1,143 @@
+.main {
+  position: relative;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 36px 16px 72px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.bgGlow {
+  position: absolute;
+  inset: -25%;
+  background: radial-gradient(60% 60% at 50% 40%, rgba(60, 120, 255, 0.06), rgba(0, 0, 0, 0));
+  filter: blur(50px);
+  z-index: -2;
+  pointer-events: none;
+}
+.bgAurora {
+  position: absolute;
+  inset: -30%;
+  filter: blur(95px);
+  opacity: 0.28;
+  z-index: -1;
+  pointer-events: none;
+}
+.bgAurora::before,
+.bgAurora::after {
+  content: "";
+  position: absolute;
+  inset: -10%;
+  border-radius: 40%;
+  background: conic-gradient(
+    from 0deg at 35% 50%,
+    rgba(110, 180, 255, 0.1),
+    rgba(158, 247, 214, 0.18),
+    rgba(110, 180, 255, 0.1),
+    rgba(255, 255, 255, 0.05),
+    rgba(110, 180, 255, 0.1)
+  );
+  animation: spin 60s linear infinite;
+}
+.bgAurora::after {
+  background: conic-gradient(
+    from 90deg at 60% 50%,
+    rgba(255, 178, 102, 0.12),
+    rgba(110, 180, 255, 0.1),
+    rgba(245, 116, 185, 0.12),
+    rgba(255, 255, 255, 0.05),
+    rgba(110, 180, 255, 0.1)
+  );
+  animation-duration: 85s;
+  animation-direction: reverse;
+}
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bgAurora::before,
+  .bgAurora::after {
+    animation: none !important;
+  }
+}
+
+.header {
+  margin-bottom: 24px;
+}
+.eyebrow {
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.heading {
+  margin: 0 0 12px;
+  font-size: clamp(28px, 4.4vw, 38px);
+  line-height: 1.15;
+}
+.summary {
+  color: var(--muted);
+  margin: 0 0 16px;
+  max-width: 80ch;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  margin: 6px 0 8px;
+}
+.role {
+  color: var(--muted);
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+}
+.chip {
+  list-style: none;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+.section {
+  margin-top: 28px;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+.sectionHeading {
+  font-size: 22px;
+  margin: 0 0 12px;
+  color: var(--text);
+}
+.paragraph {
+  color: var(--muted);
+  margin: 0 0 14px;
+  max-width: 78ch;
+  line-height: 1.65;
+}
+
+.footer {
+  margin-top: 36px;
+}
+.back {
+  color: var(--accent);
+  text-decoration: none;
+}
+.back:hover {
+  text-decoration: underline;
+  color: var(--accent-hover);
+}

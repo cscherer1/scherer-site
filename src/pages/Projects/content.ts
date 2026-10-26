@@ -25,7 +25,17 @@ export const projectsContent: ProjectsContent = {
       tech: ["n8n", "NocoDB", "JobSpy", "Python", "LLM", "Docker", "FastAPI"],
       year: 2026,
       role: "Systems & AI Engineer · Personal",
-      link: "https://jobdashboard.christianscherer.dev",
+      link: "/projects/jobdashboard",
+    },
+    {
+      id: "ouroborn-local-llm-council",
+      title: "Ouroborn — Local LLM Deliberation Council",
+      blurb:
+        "An original multi-agent system where a panel of local language models answers independently, argues over blind-labeled rounds, and a separate foreman model reads the verdict. Runs entirely on owned hardware via Ollama — no API calls, nothing leaves the machine. Opposite of an API wrapper.",
+      tech: ["Python", "Ollama", "LLM", "Docker", "SQLite", "FastAPI"],
+      year: 2026,
+      role: "AI Systems Engineer · Personal",
+      link: "/projects/ouroborn",
     },
     {
       id: "routellm-cli-development-pipeline",
