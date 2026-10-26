@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import styles from "./projects.module.css";
 
 import { fetchProjects } from "../../lib/api";
@@ -62,7 +63,7 @@ export default function ProjectsPage() {
         <div className={styles.state}>Using local fallback content (API URL not configured).</div>
       )}
       {error && <div className={styles.state}>Using fallback — API error: {error}</div>}
-      {loading && !data && <div className={styles.state}>Loading…</div>}
+      {loading && !data && <div className={styles.state}>Loading...</div>}
 
       {data && (
         <ul className={styles.grid}>
@@ -86,17 +87,25 @@ export default function ProjectsPage() {
 
               <p className={styles.cardBlurb}>{p.blurb}</p>
 
-              {(p.link?.trim() || p.repo?.trim()) && (
+              {p.link?.trim() || p.repo?.trim() ? (
                 <div className={styles.cardFooter}>
                   {p.link?.trim() && (
-                    <a
-                      className={styles.btn}
-                      href={p.link}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      Live
-                    </a>
+                    <>
+                      {p.link.startsWith("/") ? (
+                        <Link className={styles.btn} to={p.link}>
+                          Case Study
+                        </Link>
+                      ) : (
+                        <a
+                          className={styles.btn}
+                          href={p.link}
+                          target="_blank"
+                          rel="noreferrer noopener"
+                        >
+                          Live
+                        </a>
+                      )}
+                    </>
                   )}
                   {p.repo?.trim() && (
                     <a
@@ -109,7 +118,7 @@ export default function ProjectsPage() {
                     </a>
                   )}
                 </div>
-              )}
+              ) : null}
             </li>
           ))}
         </ul>
