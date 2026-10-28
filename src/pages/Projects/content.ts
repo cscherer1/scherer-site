@@ -18,6 +18,42 @@ export const projectsContent: ProjectsContent = {
   heading: "Projects",
   items: [
     {
+      id: "secure-term-end-to-end-encrypted-browser-terminal",
+      title: "Secure-Term — End-to-End Encrypted Browser Terminal",
+      blurb:
+        "E2E-encrypted long-poll browser terminal that keeps terminal content opaque to edge and TLS-inspection proxies. Python standard-library HTTP server, AES-GCM via WebCrypto, paramiko SSH into persistent tmux sessions, constant-time token auth, no inbound ports. Built so remote administration works through a Zero Trust tunnel without exposing plaintext to the middlebox.",
+      tech: ["Python", "AES-GCM", "WebCrypto", "xterm.js", "paramiko", "SSH", "tmux", "Docker"],
+      year: 2026,
+      role: "Security & Systems Engineer · Personal",
+    },
+    {
+      id: "agent-test-disposable-container-verification-pipeline",
+      title: "Agent-Test — Disposable-Container Verification Pipeline",
+      blurb:
+        "Self-contained CI harness that spins ephemeral containers to run static analysis, unit/API/UI tests, and hardcoded-value scans against the career automation stack without touching live services. Treats undefined-name lint errors as build failures and gates merges on reproducible results.",
+      tech: ["Docker", "pytest", "pyflakes", "Browserless", "Bash", "CI/CD", "GitHub Actions"],
+      year: 2026,
+      role: "DevOps / Test Engineer · Personal",
+    },
+    {
+      id: "ai-study-guide-interview-prep-jobdashboard",
+      title: "AI Study Guide & Interview Prep (JobDashboard)",
+      blurb:
+        "JobDashboard extension that researches each target company (Wikipedia, news RSS, site scrape, tech-stack detection) and generates a per-job study guide and interview prep sheet grounded only in verified skills and project evidence. Runs as an n8n workflow over the same LLM routing layer.",
+      tech: ["n8n", "LLM", "RouteLLM", "NocoDB", "Python", "RSS", "Web Scraping"],
+      year: 2026,
+      role: "AI Systems Engineer · Personal",
+    },
+    {
+      id: "agentic-cli-development-workflow-opencode-deepseek",
+      title: "Agentic CLI Development Workflow (OpenCode + DeepSeek)",
+      blurb:
+        "Long-context agent-driven development using OpenCode with DeepSeek models for code execution, wired into the same verification gates as human changes: disposable-container tests, hardcode scans, and PR review. Emphasis on invariant design and proof of correctness rather than blind generation.",
+      tech: ["OpenCode", "DeepSeek", "LLM", "Git", "Docker", "CLI", "CI/CD"],
+      year: 2026,
+      role: "AI Systems Engineer · Personal",
+    },
+    {
       id: "job-search-automation-dashboard",
       title: "Job Search Automation Dashboard",
       blurb:
