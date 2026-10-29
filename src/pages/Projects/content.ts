@@ -45,6 +45,33 @@ export const projectsContent: ProjectsContent = {
       role: "AI Systems Engineer · Personal",
     },
     {
+      id: "command-deck-container-control-plane",
+      title: "Command Deck — Container Control Plane",
+      blurb:
+        "Config-driven control plane for a 40-container self-hosted stack: discovers Docker services live, streams per-container and host resource stats, and starts/stops/restarts containers through a guarded action layer. FastAPI and the Docker SDK behind a restricted socket proxy, Cloudflare Access JWT verification, YAML/env-driven configuration, and a dependency-free SPA.",
+      tech: ["FastAPI", "Docker SDK", "Cloudflare Access", "PyJWT", "psutil", "Python", "YAML"],
+      year: 2026,
+      role: "Platform / DevOps Engineer · Personal",
+    },
+    {
+      id: "op-e-voice-local-speech-service",
+      title: "OP-E Voice — Local Speech Service",
+      blurb:
+        "Self-hosted speech service for my agent's spoken interface: faster-whisper transcription and Kokoro, Piper, or eSpeak synthesis with per-emotion prosody, signature chirps, and callout framing. Streaming audio runs over an encrypted session with no cloud speech APIs involved.",
+      tech: ["Python", "faster-whisper", "Kokoro", "Piper", "eSpeak NG", "FastAPI", "Docker", "Audio DSP"],
+      year: 2026,
+      role: "AI Systems Engineer · Personal",
+    },
+    {
+      id: "command-center-disaster-recovery-rebuild-repo",
+      title: "Command Center — Disaster-Recovery Rebuild Repo",
+      blurb:
+        "Sanitized disaster-recovery repository for a multi-service home server: every maintained service pinned as a submodule, secrets kept out of source, and a bootstrap that detects the host (distro, UID/GID, storage, ports) and rebuilds the stack from scratch. Includes backup/restore tooling, sanitization checks, and written rebuild runbooks.",
+      tech: ["Docker Compose", "Bash", "Python", "Git Submodules", "Linux", "Cloudflare Zero Trust", "Disaster Recovery"],
+      year: 2026,
+      role: "Systems Architect · Personal",
+    },
+    {
       id: "agentic-cli-development-workflow-opencode-deepseek",
       title: "Agentic CLI Development Workflow (OpenCode + DeepSeek)",
       blurb:
