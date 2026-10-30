@@ -1,4 +1,12 @@
 {
-  "installCommand": "pnpm install --no-frozen-lockfile",
-  "routes": [{ "handle": "filesystem" }, { "src": "/.*", "dest": "/index.html" }]
+  "installCommand": "pnpm install --no-frozen-lockfile --allow-build=esbuild",
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/.*",
+      "dest": "/index.html"
+    }
+  ]
 }
