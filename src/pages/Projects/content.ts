@@ -48,7 +48,7 @@ export const projectsContent: ProjectsContent = {
       id: "command-deck-container-control-plane",
       title: "Command Deck — Container Control Plane & Tool Console",
       blurb:
-        "Config-driven control plane and 42-tool operations console for a 43-container self-hosted stack: discovers Docker services live, groups tools by function, streams host and per-container stats, runs HTTP health probes, and starts/stops/restarts through a guarded action layer. FastAPI and the Docker SDK behind a restricted socket proxy, Cloudflare Access JWT verification, YAML/env config, and a dependency-free SPA.",
+        "Config-driven control plane and 43-tool operations console for a 43-container self-hosted stack: discovers Docker services live, groups tools by function, streams host and per-container stats, runs HTTP health probes, and starts/stops/restarts through a guarded action layer. FastAPI and the Docker SDK behind a restricted socket proxy, Cloudflare Access JWT verification, YAML/env config, and a dependency-free SPA.",
       tech: ["FastAPI", "Docker SDK", "Cloudflare Access", "PyJWT", "psutil", "Python", "YAML", "Health checks"],
       year: 2026,
       role: "Platform / DevOps Engineer · Personal",
