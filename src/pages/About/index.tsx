@@ -7,7 +7,7 @@ import ResumePreview from "./ResumePreview";
 // refetches the latest file (browser PDF plugins otherwise reuse a stale
 // cached copy). Value = the resume PDF's git object SHA; bump it whenever
 // the resume is re-generated.
-const RESUME_BUST = "817ce517b4f4c4b96252f8bfcccce9b68e4c49b1";
+const RESUME_BUST = "7d19e89b1516d5fb10a003fa94a2dc0c5cb938f9";
 
 export default function AboutPage() {
   const a = aboutContent;

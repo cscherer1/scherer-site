@@ -46,12 +46,21 @@ export const projectsContent: ProjectsContent = {
     },
     {
       id: "command-deck-container-control-plane",
-      title: "Command Deck — Container Control Plane",
+      title: "Command Deck — Container Control Plane & Tool Console",
       blurb:
-        "Config-driven control plane for a 40-container self-hosted stack: discovers Docker services live, streams per-container and host resource stats, and starts/stops/restarts containers through a guarded action layer. FastAPI and the Docker SDK behind a restricted socket proxy, Cloudflare Access JWT verification, YAML/env-driven configuration, and a dependency-free SPA.",
-      tech: ["FastAPI", "Docker SDK", "Cloudflare Access", "PyJWT", "psutil", "Python", "YAML"],
+        "Config-driven control plane and 42-tool operations console for a 43-container self-hosted stack: discovers Docker services live, groups tools by function, streams host and per-container stats, runs HTTP health probes, and starts/stops/restarts through a guarded action layer. FastAPI and the Docker SDK behind a restricted socket proxy, Cloudflare Access JWT verification, YAML/env config, and a dependency-free SPA.",
+      tech: ["FastAPI", "Docker SDK", "Cloudflare Access", "PyJWT", "psutil", "Python", "YAML", "Health checks"],
       year: 2026,
       role: "Platform / DevOps Engineer · Personal",
+    },
+    {
+      id: "self-healing-stack-automation",
+      title: "Self-Healing Stack Automation",
+      blurb:
+        "Cron-driven operations layer for a 43-container stack: Brave CPU watchdog, container health watchdog, Sonarr queue janitor, qBittorrent executable exclusions, Uptime Kuma-to-ntfy alert bridge, and nightly consistent SQLite/Postgres backups mirrored across drives. Every fix runs unattended with cooldowns and dry-run support.",
+      tech: ["Python", "Bash", "Docker", "Uptime Kuma", "ntfy", "SQLite", "PostgreSQL", "Cron"],
+      year: 2026,
+      role: "Site Reliability / Platform Engineer · Personal",
     },
     {
       id: "op-e-voice-local-speech-service",
