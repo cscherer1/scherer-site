@@ -36,7 +36,7 @@ export type AboutContent = {
 export const aboutContent: AboutContent = {
   heading: "About Me",
   blurb:
-    "Enterprise automation and systems engineer turned full-stack and AI engineer. Eight years modernizing Microsoft 365 and automating with PowerShell and ServiceNow at Burns & McDonnell, now bridging IBM i platforms to Azure at Murphy-Hoffman Company – and building AI-powered dev tooling, from LLM-driven job-search automation to a homelab agent stack, a self-hosted speech service, a live container control plane, an encrypted AI operations console, self-healing operations with Kuma/ntfy alerting and nightly backups, and an end-to-end encrypted browser terminal, with Zero Trust governance applied end-to-end.",
+    "Enterprise automation and systems engineer turned full-stack and AI engineer. Eight years modernizing Microsoft 365 and automating with PowerShell and ServiceNow at Burns & McDonnell, now bridging IBM i platforms to Azure at Murphy-Hoffman Company – and building AI-powered dev tooling, from LLM-driven job-search automation to a homelab agent stack, a self-hosted speech service, a live container control plane, an encrypted AI operations console, self-healing operations with Kuma/ntfy alerting and nightly backups, and an end-to-end encrypted browser terminal, with Zero Trust governance applied end-to-end, plus a Mind observer feed and episodic agent memory.",
   highlights: [
     "Microsoft 365 Sub-Global Admin: Exchange Online, Entra ID, Intune MDM/MAM",
     "PowerShell and ServiceNow automation at enterprise scale",
@@ -47,6 +47,8 @@ export const aboutContent: AboutContent = {
     "Security engineering: E2E-encrypted terminal and AI console (AES-GCM, SSH, tmux, OpenCode API) and hardcode-scanning CI gates",
     "Platform operations: live container control plane (FastAPI + Docker SDK) behind Cloudflare Access, with disaster-recovery bootstrap, backup/restore, and rebuild runbooks",
     "Self-healing operations: 37 Kuma monitors bridged to ntfy, health/CPU watchdogs, Sonarr queue janitor, executable-download blocking, and 14-day appdata backups",
+    "Agent observability: Mind feed for thoughts, test results, screenshots, on-demand speech, and text-only episodic memory that survives End chat",
+    "Reproducible laptop setup: private GitHub repo with a 5-minute pull/apply sync and drift backups",
   ],
 
   // New sections
