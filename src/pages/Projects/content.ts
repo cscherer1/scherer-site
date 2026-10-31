@@ -30,8 +30,8 @@ export const projectsContent: ProjectsContent = {
       id: "op-e-console-encrypted-ai-operations-console",
       title: "OP-E Console — Encrypted AI Operations Console",
       blurb:
-        "End-to-end encrypted chat console for operating an OpenCode/DeepSeek agent: session resume, screenshot attachments, all-session cost and token analytics, live server health, and an isolated workspace. Reads the OpenCode API, keeps agent chat separate from CLI coding sessions, and runs behind Cloudflare Access with Kuma monitoring, systemd restart, and verified backups.",
-      tech: ["Python", "AES-GCM", "WebCrypto", "OpenCode", "DeepSeek", "OpenCode API", "Docker", "SQLite", "Uptime Kuma", "Cloudflare Access"],
+        "End-to-end encrypted chat console for operating an OpenCode/DeepSeek agent: session resume, screenshot attachments, all-session cost and token analytics, live server health, and an isolated workspace. Includes the Mind observer feed — thought, test, and screenshot timeline with on-demand speech and text-only episodic memory that survives End chat — and a private GitHub repo that keeps the laptop setup in sync. Reads the OpenCode API, keeps agent chat separate from CLI coding sessions, and runs behind Cloudflare Access with Kuma monitoring, systemd restart, and verified backups.",
+      tech: ["Python", "AES-GCM", "WebCrypto", "OpenCode", "DeepSeek", "OpenCode API", "Docker", "SQLite", "Uptime Kuma", "Cloudflare Access", "Episodic memory", "GitHub sync"],
       year: 2026,
       role: "AI Systems Engineer · Personal",
     },
