@@ -13,7 +13,7 @@ export const landingContent: LandingContent = {
   owner: "Christian Scherer",
   roles: "Full-Stack & AI Systems Engineer — Enterprise Automation, Cloud & Zero Trust",
   summary:
-    "Full-stack and AI systems engineer: I build software, automation, and AI tooling that runs enterprises. Eight years modernizing Microsoft 365, ServiceNow, and IBM i platforms; REST APIs and .NET/Python services; n8n and LLM pipelines, RouteLLM routing, OpenCode/DeepSeek agentic development, local speech (Whisper STT, Kokoro/Piper/eSpeak TTS), container control planes, self-healing stack automation (Kuma/ntfy alerts, health watchdogs, nightly backups), encrypted remote tooling and an encrypted AI operations console with a Mind observer feed and episodic agent memory — all deployed governance-first under Zero Trust.",
+    "Full-stack and AI systems engineer: I build software, automation, and AI tooling that runs enterprises. Eight years modernizing Microsoft 365, ServiceNow, and IBM i platforms; REST APIs and .NET/Python services; n8n and LLM pipelines, RouteLLM routing, OpenCode/DeepSeek agentic development, local speech (Whisper STT, Kokoro/Piper/eSpeak TTS), container control planes, self-healing stack automation (Kuma/ntfy alerts, health watchdogs, nightly backups), encrypted remote tooling and an encrypted AI operations console with a Mind observer feed, episodic agent memory, a read-only Sentinel observer, local recall search, a four-lab model council, and a supervised remote-desktop gateway — all deployed governance-first under Zero Trust.",
   specialties: [
     "M365",
     "Intune",
@@ -36,6 +36,10 @@ export const landingContent: LandingContent = {
     "OpenCode",
     "DeepSeek",
     "Agent memory",
+    "Sentinel / observability",
+    "Recall (FTS5)",
+    "Model council",
+    "Remote desktop",
     "GitHub sync",
     "Ollama",
     "Whisper",
