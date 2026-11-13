@@ -8,17 +8,17 @@ import { projectsContent as localFallback } from "./content";
 
 export default function ProjectsPage() {
   const [data, setData] = useState<ProjectsDto | null>(null);
-  const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
   const apiBase = import.meta.env.VITE_API_URL; // e.g., https://localhost:7210
+  const featuredIds = localFallback.items.map((p) => p.id);
+  const featuredOrder = new Map(featuredIds.map((id, i) => [id, i]));
 
   useEffect(() => {
     let cancelled = false;
 
     async function load() {
       setLoading(true);
-      setError(null);
 
       try {
         if (apiBase) {
@@ -30,7 +30,7 @@ export default function ProjectsPage() {
       } catch (err) {
         if (!cancelled) {
           const msg = err instanceof Error ? err.message : String(err);
-          setError(msg);
+          console.warn("Projects API unavailable; using local content:", msg);
           setData(localFallback); // graceful fallback
         }
       } finally {
@@ -54,20 +54,22 @@ export default function ProjectsPage() {
         <div className={styles.eyebrow}>Projects</div>
         <h1 className={`${styles.heading} sectionTitle`}>{"Selected Work"}</h1>
         <p className={styles.blurb}>
-          Enterprise automation, platform governance, legacy integration, and Zero Trust
-          infrastructure, from production work and my self-hosted lab.
+          Integration architecture, enterprise automation, legacy-to-cloud delivery and
+          applied AI, from production work and independent builds.
         </p>
       </header>
 
-      {!apiBase && (
-        <div className={styles.state}>Using local fallback content (API URL not configured).</div>
-      )}
-      {error && <div className={styles.state}>Using fallback — API error: {error}</div>}
       {loading && !data && <div className={styles.state}>Loading...</div>}
 
-      {data && (
+      {data && (() => {
+        const apiItems = data.items
+          .filter((p) => featuredOrder.has(p.id))
+          .sort((a, b) => (featuredOrder.get(a.id) ?? 0) - (featuredOrder.get(b.id) ?? 0));
+        const items = apiItems.length === featuredIds.length ? apiItems : localFallback.items;
+
+        return (
         <ul className={styles.grid}>
-          {data.items.map((p) => (
+          {items.map((p) => (
             <li key={p.id} className={styles.card}>
               <div className={styles.cardTitleRow}>
                 <div className={styles.cardTitle}>{p.title}</div>
@@ -122,7 +124,8 @@ export default function ProjectsPage() {
             </li>
           ))}
         </ul>
-      )}
+        );
+      })()}
     </main>
   );
 }

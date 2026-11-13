@@ -36,23 +36,18 @@ export type AboutContent = {
 export const aboutContent: AboutContent = {
   heading: "About Me",
   blurb:
-    "Enterprise automation and systems engineer turned full-stack and AI engineer. Eight years modernizing Microsoft 365 and automating with PowerShell and ServiceNow at Burns & McDonnell, now bridging IBM i platforms to Azure at Murphy-Hoffman Company – and building AI-powered dev tooling, from LLM-driven job-search automation to a homelab agent stack, a self-hosted speech service, a live container control plane, an encrypted AI operations console, self-healing operations with Kuma/ntfy alerting and nightly backups, and an end-to-end encrypted browser terminal, with Zero Trust governance applied end-to-end, plus a Mind observer feed, episodic agent memory, a read-only Sentinel observer, local recall search, a four-lab model council, and a supervised remote-desktop gateway.",
+    "I am an enterprise integration and automation architect, not a pure programmer. I start with the business process, design the interfaces and controls, then build the smallest system that removes the manual work and stays supportable. A decade in enterprise IT, eight years at Burns & McDonnell, and now IBM i-to-Azure integration at Murphy-Hoffman. I also design and operate an applied-AI operations platform on a self-hosted production stack, so the AI work is grounded in real deployment, security and cost constraints.",
   highlights: [
-    "Microsoft 365 Sub-Global Admin: Exchange Online, Entra ID, Intune MDM/MAM",
-    "PowerShell and ServiceNow automation at enterprise scale",
-    "Hybrid cloud + legacy depth: IBM i (RPG/CL) ↔ Azure, Python, .NET",
-    "Zero Trust networking and governance-first applied AI",
-    "Full-stack AI tooling: n8n, NocoDB, FastAPI, RouteLLM, OpenCode/DeepSeek, multi-agent systems, local LLMs",
-    "Deep-stack software: REST APIs, .NET & Python services, React/Next.js, PostgreSQL, CI/CD, disposable-container test pipelines",
-    "Security engineering: E2E-encrypted terminal and AI console (AES-GCM, SSH, tmux, OpenCode API) and hardcode-scanning CI gates",
-    "Platform operations: live container control plane (FastAPI + Docker SDK) behind Cloudflare Access, with disaster-recovery bootstrap, backup/restore, and rebuild runbooks",
-    "Self-healing operations: 37 Kuma monitors bridged to ntfy, health/CPU watchdogs, Sonarr queue janitor, executable-download blocking, and 14-day appdata backups",
-    "Agent observability: Mind feed for thoughts, test results, screenshots, on-demand speech, and text-only episodic memory that survives End chat",
-    "Assurance tooling: read-only Sentinel triage with advisory suggestions, local FTS5 recall across notes/Mind/council/Sentinel history, and a four-lab model council with verification and a judge",
-    "Reproducible laptop setup: private GitHub repo with a 5-minute pull/apply sync and drift backups",
+    "Led architecture and delivery of the QTS platform's Azure modernization.",
+    "Designed OAuth and Azure-token REST integrations across internal platforms.",
+    "Automated licensing, storage archiving and data normalization, removing hundreds of administrative hours a year.",
+    "Designed ServiceNow catalog modules and automation for thousands of users, including ESRI backup integration.",
+    "Bridge IBM i (RPGLE/CL) systems to Azure, Python and .NET services.",
+    "Build applied-AI operations tooling with security, cost and failure handling designed in.",
+    "Document architecture and governance decisions; mentor developers through review.",
+    "US/UK dual citizen, available to work in the UK without sponsorship.",
   ],
 
-  // New sections
   education: [
     {
       school: "Southern New Hampshire University",
