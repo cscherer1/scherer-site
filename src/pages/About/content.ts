@@ -38,13 +38,14 @@ export const aboutContent: AboutContent = {
   blurb:
     "I am an enterprise integration and automation architect, not a pure programmer. I start with the business process, design the interfaces and controls, then build the smallest system that removes the manual work and stays supportable. A decade in enterprise IT, eight years at Burns & McDonnell, and now IBM i-to-Azure integration at Murphy-Hoffman. I also design and operate an applied-AI operations platform on a self-hosted production stack, so the AI work is grounded in real deployment, security and cost constraints.",
   highlights: [
-    "Led architecture and delivery of the QTS platform's Azure modernization.",
-    "Designed OAuth and Azure-token REST integrations across internal platforms.",
-    "Automated licensing, storage archiving and data normalization, removing hundreds of administrative hours a year.",
-    "Designed ServiceNow catalog modules and automation for thousands of users, including ESRI backup integration.",
+    "Automated M365, licensing and access processes through ServiceNow, Azure and PowerShell.",
+    "Automated Revit server administration, ImaginIT Clarity workflows, employee name changes and manager-requested access removal for departed employees.",
+    "Managed the Azure backup and restore process for ArcGIS before the platform had a native feature.",
+    "Contributed to the QTS platform's Azure modernization as a developer.",
+    "Integrated internal platforms using OAuth and Azure tokens.",
+    "Automated storage archiving and data normalization, removing hundreds of administrative hours a year.",
     "Bridge IBM i (RPGLE/CL) systems to Azure, Python and .NET services.",
     "Build applied-AI operations tooling with security, cost and failure handling designed in.",
-    "Document architecture and governance decisions; mentor developers through review.",
     "US/UK dual citizen, available to work in the UK without sponsorship.",
   ],
 

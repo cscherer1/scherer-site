@@ -21,10 +21,10 @@ export const projectsContent: ProjectsContent = {
       id: "enterprise-integration-automation",
       title: "Enterprise Integration & Automation",
       blurb:
-        "Led the QTS platform's Azure modernization and built the integration layer around it: OAuth and Azure-token REST APIs, ServiceNow catalog automation for thousands of users, and scheduled workflows for licensing, DFS archiving and data normalization. The automation removed hundreds of administrative hours a year and replaced hand-run processes with documented, supported services.",
-      tech: ["Azure", "ServiceNow", "REST / OAuth", ".NET", "PowerShell", "IBM i", "Data governance"],
+        "Automated M365, licensing, access and data workflows through ServiceNow, Azure and PowerShell, including Revit server administration, ImaginIT Clarity, ArcGIS backup and restore in Azure, employee name changes and manager-requested access removal for departed employees. Contributed to the QTS platform's Azure modernization as a developer. The automation removed hundreds of administrative hours a year and replaced hand-run processes with documented, supported services.",
+      tech: ["Azure", "ServiceNow", "PowerShell", "Microsoft 365", "ArcGIS", "REST / OAuth", ".NET"],
       year: 2025,
-      role: "Integration & Automation Architect · Burns & McDonnell",
+      role: "Staff Software Developer · Burns & McDonnell",
     },
     {
       id: "ibmi-azure-integration-bridge",
