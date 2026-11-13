@@ -86,6 +86,76 @@
   max-width: 80ch;
 }
 
+.legend {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.legendDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent, #7aa2ff);
+  box-shadow: 0 0 0 4px rgba(122, 162, 255, 0.12);
+}
+.legendSep {
+  opacity: 0.45;
+}
+
+/* timeline */
+.timeline {
+  position: relative;
+  margin-top: 28px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 13px;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: linear-gradient(var(--border), transparent);
+}
+.yearGroup {
+  position: relative;
+  padding-left: 44px;
+  margin-bottom: 36px;
+}
+.yearGroup:last-child {
+  margin-bottom: 0;
+}
+.yearMarker {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.yearMarker::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent, #7aa2ff);
+  box-shadow: 0 0 0 5px var(--bg);
+}
+.year {
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
+.yearCount {
+  color: var(--muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
 /* grid and cards */
 .grid {
   list-style: none;
@@ -104,6 +174,22 @@
   .grid {
     grid-template-columns: 1fr;
   }
+  .timeline::before {
+    left: 9px;
+  }
+  .yearGroup {
+    padding-left: 34px;
+  }
+  .yearMarker {
+    width: 20px;
+  }
+  .yearCount {
+    display: none;
+  }
+  .meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .card {
@@ -112,6 +198,24 @@
   background: rgba(255, 255, 255, 0.03);
   border-radius: 12px;
   padding: 14px;
+}
+.featured {
+  border-color: rgba(122, 162, 255, 0.45);
+  background: linear-gradient(
+    160deg,
+    rgba(122, 162, 255, 0.075),
+    rgba(255, 255, 255, 0.025) 55%
+  );
+}
+.featuredTag {
+  color: var(--accent, #7aa2ff);
+  border: 1px solid rgba(122, 162, 255, 0.35);
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 .cardTitleRow {
   display: flex;
