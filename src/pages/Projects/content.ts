@@ -21,8 +21,8 @@ export const projectsContent: ProjectsContent = {
       id: "enterprise-integration-automation",
       title: "Enterprise Integration & Automation",
       blurb:
-        "Automated M365, licensing, access and data workflows through ServiceNow, Azure and PowerShell, including Revit server administration, ImaginIT Clarity, ArcGIS backup and restore in Azure, employee name changes and manager-requested access removal for departed employees. Contributed to the QTS platform's Azure modernization as a developer. The automation removed hundreds of administrative hours a year and replaced hand-run processes with documented, supported services.",
-      tech: ["Azure", "ServiceNow", "PowerShell", "Microsoft 365", "ArcGIS", "REST / OAuth", ".NET"],
+        "Automated enterprise and M365 processes through ServiceNow, Azure and PowerShell: access and licensing changes, IP-address management, backup and restore, and the reporting and data workflows around them. Examples include EfficientIP pool and range pre-reservation, Revit server and ImaginIT Clarity automation, employee name changes, manager-requested access removal for departed employees, and ArcGIS backup and restore in Azure. Contributed to the QTS platform's Azure modernization as a developer. The automation removed hundreds of administrative hours a year and replaced hand-run processes with documented, supported services.",
+      tech: ["Azure", "ServiceNow", "PowerShell", "Microsoft 365", "EfficientIP", "ArcGIS", "REST / OAuth"],
       year: 2025,
       role: "Staff Software Developer · Burns & McDonnell",
     },
