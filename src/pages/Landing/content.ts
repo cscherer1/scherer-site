@@ -13,7 +13,7 @@ export const landingContent: LandingContent = {
   owner: "Christian Scherer",
   roles: "Enterprise Integration & Automation Architect — Azure, ServiceNow & Applied AI",
   summary:
-    "I design the integration and automation layer between legacy systems, cloud services and AI. Ten years in enterprise IT, eight at Burns & McDonnell, where I led the QTS platform's Azure modernization and automated licensing, archiving and data workflows that removed hundreds of administrative hours a year. Now bridging IBM i to Azure at Murphy-Hoffman, and building applied-AI operations tooling that I actually run.",
+    "I design the integration and automation layer between legacy systems, cloud services and AI. Ten years in enterprise IT, eight at Burns & McDonnell, where I automated M365, licensing and access processes through ServiceNow, Azure and PowerShell, including Revit server, ImaginIT Clarity, ArcGIS backup and restore in Azure, employee name changes and manager-requested access removal for departed employees. I also contributed to the QTS platform's Azure modernization as a developer. Now bridging IBM i to Azure at Murphy-Hoffman, and building applied-AI operations tooling that I actually run.",
   specialties: [
     "Enterprise integration",
     "Solution architecture",
