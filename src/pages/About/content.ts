@@ -36,16 +36,14 @@ export type AboutContent = {
 export const aboutContent: AboutContent = {
   heading: "About Me",
   blurb:
-    "I am an enterprise integration and automation architect, not a pure programmer. I start with the business process, design the interfaces and controls, then build the smallest system that removes the manual work and stays supportable. A decade in enterprise IT, eight years at Burns & McDonnell, and now IBM i-to-Azure integration at Murphy-Hoffman. I also design and operate an applied-AI operations platform on a self-hosted production stack, so the AI work is grounded in real deployment, security and cost constraints.",
+    "I am an enterprise integration and automation architect, not a pure programmer. I start with the business process, design the interfaces and controls, then build the smallest system that removes the manual work and stays supportable. A decade in enterprise IT and eight years at Burns & McDonnell, where I automated enterprise and M365 processes through ServiceNow, Azure and PowerShell: access and licensing changes, IP-address management, backup and restore, and the reporting and data workflows around them. Now at Murphy-Hoffman, I connect IBM i (RPGLE/CL) systems to Azure, Python and .NET services. I also design and operate an applied-AI operations platform on a self-hosted production stack, so the AI work is grounded in real deployment, security and cost constraints.",
   highlights: [
-    "Automated enterprise and M365 processes through ServiceNow, Azure and PowerShell.",
-    "Covered access and licensing changes, IP-address management, backup and restore, and the reporting and data workflows around them.",
-    "Examples include EfficientIP pool and range reservations, Revit server and ImaginIT Clarity automation, employee name changes, manager-requested access removal for departed employees, and ArcGIS backup and restore in Azure.",
-    "Contributed to the QTS platform's Azure modernization as a developer.",
-    "Integrated internal platforms using OAuth and Azure tokens.",
-    "Automated storage archiving and data normalization, removing hundreds of administrative hours a year.",
-    "Bridge IBM i (RPGLE/CL) systems to Azure, Python and .NET services.",
-    "Build applied-AI operations tooling with security, cost and failure handling designed in.",
+    "Automate enterprise and M365 processes through ServiceNow, Azure and PowerShell.",
+    "Cover access and licensing, IP-address management, backup and restore, and supporting data workflows.",
+    "Examples: EfficientIP pool reservations, Revit server and ImaginIT Clarity automation, delegated manager access to departed employees' files, and ArcGIS backup and restore in Azure.",
+    "Integrate internal platforms using OAuth and Azure tokens.",
+    "Connect IBM i (RPGLE/CL) systems to Azure, Python and .NET services.",
+    "Build and operate applied-AI tooling with security, cost and failure handling designed in.",
     "US/UK dual citizen, available to work in the UK without sponsorship.",
   ],
 
