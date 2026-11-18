@@ -2,12 +2,14 @@ import { aboutContent } from "./content";
 import styles from "./about.module.css";
 import profilePic from "../../assets/profile.jpg";
 import ResumePreview from "./ResumePreview";
+import { profile } from "../../config/profile";
 
 // Cache-bust the inline resume preview so the embedded PDF viewer always
 // refetches the latest file (browser PDF plugins otherwise reuse a stale
-// cached copy). Value = the resume PDF's git object SHA; bump it whenever
-// the resume is re-generated.
-const RESUME_BUST = "cbba55155d70956747c8934b2071b4fc7cf6da36";
+// cached copy). Set VITE_RESUME_BUST (or edit the profile default) whenever
+// the resume is regenerated.
+const RESUME_URL = `/${profile.resumeFile}`;
+const RESUME_BUST = profile.resumeBust;
 
 export default function AboutPage() {
   const a = aboutContent;
@@ -24,7 +26,7 @@ export default function AboutPage() {
 
         <img
           src={profilePic}
-          alt="Christian Scherer"
+          alt={profile.name}
           className={styles.profile}
           width={112}
           height={112}
@@ -38,15 +40,15 @@ export default function AboutPage() {
           <div className={styles.actions}>
             <a
               className={styles.btn}
-              href="/Christian_Scherer_Resume.pdf"
-              download="Christian_Scherer_Resume.pdf"
+              href={RESUME_URL}
+              download={profile.resumeFile}
             >
               Download Résumé (PDF)
             </a>
 
             <a
               className={styles.btnSecondary}
-              href="/Christian_Scherer_Resume.pdf"
+              href={RESUME_URL}
               target="_blank"
               rel="noreferrer noopener"
             >
@@ -59,8 +61,8 @@ export default function AboutPage() {
             <summary className={styles.resumeSummary}>Preview résumé (inline)</summary>
             <div className={styles.embed}>
               <ResumePreview
-                src={`/Christian_Scherer_Resume.pdf?v=${RESUME_BUST}`}
-                fallbackUrl="/Christian_Scherer_Resume.pdf"
+                src={`${RESUME_URL}?v=${RESUME_BUST}`}
+                fallbackUrl={RESUME_URL}
               />
             </div>
           </details>

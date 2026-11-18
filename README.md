@@ -66,6 +66,10 @@ pnpm build
 ## Production configuration
 
 - `VITE_API_URL` must point at the production API base URL
+- Profile, contact details, location, relocation target, phones, links and the
+  resume filename are all configurable with the `VITE_*` variables documented
+  in `.env.example` (defaults in `src/config/profile.ts`). A move or a new
+  phone number needs no source edit.
 - Vercel: build `pnpm build`, output `dist`, and enable **SPA rewrites** (or a `vercel.json` rewriting all paths to `/index.html`) so deep links don't 404
 - CORS on the API must include the site origin
 
