@@ -12,9 +12,7 @@ export default function ContactPage() {
       <header className={styles.header}>
         <div className={styles.eyebrow}>Contact</div>
         <h1 className={`${styles.heading} sectionTitle`}>Get in Touch</h1>
-        <p className={styles.blurb}>
-          Open to in-office, hybrid, or remote full-time roles. Email preferred for first contact.
-        </p>
+        <p className={styles.blurb}>{c.note[0]}</p>
       </header>
 
       <section className={styles.grid}>
@@ -25,29 +23,31 @@ export default function ContactPage() {
           </a>
         </div>
 
-        <div className={styles.item}>
-          <div className={styles.label}>US Phone</div>
-          <a className={styles.link} href={`tel:${c["US Phone"]}`}>
-            {c["US Phone"]}
-          </a>
-        </div>
+        {c.phones.map((phone) => (
+          <div className={styles.item} key={`${phone.label}:${phone.number}`}>
+            <div className={styles.label}>{phone.label}</div>
+            <a className={styles.link} href={`tel:${phone.number}`}>
+              {phone.number}
+            </a>
+          </div>
+        ))}
 
-        <div className={styles.item}>
-        <div className={styles.label}>UK Phone</div>
-          <a className={styles.link} href={`tel:${c["UK Phone"]}`}>
-            {c["UK Phone"]}
-        </a>
-        </div>
-        
         <div className={styles.item}>
           <div className={styles.label}>Location</div>
           <div>{c.location}</div>
         </div>
+
+        {c.relocation ? (
+          <div className={styles.item}>
+            <div className={styles.label}>Relocation</div>
+            <div>{c.relocation}</div>
+          </div>
+        ) : null}
       </section>
 
-      {c.note?.length ? (
+      {c.note.length > 1 ? (
         <ul className={styles.notes}>
-          {c.note.map((n, i) => (
+          {c.note.slice(1).map((n, i) => (
             <li key={i}>{n}</li>
           ))}
         </ul>
