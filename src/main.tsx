@@ -8,6 +8,8 @@ import AboutPage from "./pages/About";
 import ContactPage from "./pages/Contact";
 import NotFoundPage from "./pages/NotFound";
 import ProjectsPage from "./pages/Projects";
+import WorkIndexPage from "./pages/Work";
+import WorkDetailPage from "./pages/Work/WorkDetail";
 import CaseStudyPage from "./pages/CaseStudy/CaseStudyPage";
 import AdminPage from "./pages/Admin";
 
@@ -18,6 +20,8 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <LandingPage /> }, // /
       { path: "projects", element: <ProjectsPage /> }, // /projects
+      { path: "work", element: <WorkIndexPage /> }, // /work
+      { path: "work/:slug", element: <WorkDetailPage /> }, // /work/:slug
       { path: "projects/jobdashboard", element: <CaseStudyPage slug="jobdashboard" /> }, // /projects/jobdashboard
       { path: "projects/ouroborn", element: <CaseStudyPage slug="ouroborn" /> }, // /projects/ouroborn
       { path: "about", element: <AboutPage /> }, // /about
