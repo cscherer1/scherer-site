@@ -74,9 +74,12 @@ export const profile = {
   email: env.VITE_CONTACT_EMAIL || "cschere1@gmail.com",
   phones: parsePhones(env.VITE_CONTACT_PHONES),
   location: env.VITE_CONTACT_LOCATION || "Las Vegas, NV",
-  relocation: env.VITE_RELOCATION_TARGET ?? "Brighton / Greater London, UK (potential)",
+  // Empty by default: he has settled in Las Vegas, so Contact hides the
+  // relocation row and the "open to relocate" line entirely.
+  relocation: env.VITE_RELOCATION_TARGET ?? "",
   citizenship: env.VITE_CITIZENSHIP || "US/UK dual citizen",
-  sponsorship: env.VITE_SPONSORSHIP_NOTE || "no UK sponsorship needed",
+  // Only rendered alongside a relocation target; empty by default.
+  sponsorship: env.VITE_SPONSORSHIP_NOTE || "",
   availability:
     env.VITE_AVAILABILITY ||
     "Open to in-office, hybrid, or remote full-time or contract roles in integration architecture, automation architecture and solutions engineering.",

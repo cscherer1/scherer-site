@@ -60,8 +60,25 @@ Quality checks:
 ```bash
 pnpm lint
 pnpm typecheck
+pnpm check:copy   # stale-copy guard (also runs as prebuild)
 pnpm build
 ```
+
+### Copy guard
+
+`scripts/check-copy.mjs` scans `src/`, `public/` and `.env.example` for stale
+relocation copy (case-insensitive `brighton`, `greater london`, `relocating to`,
+`uk move`), and extracts the text of every `public/*.pdf` with the existing
+`pdfjs-dist` dependency. It runs automatically as `prebuild`, so `pnpm build`
+fails if the text comes back.
+
+A line that legitimately needs one of the patterns (for example the generic
+"open to relocating to …" template that is only rendered when a relocation
+target is configured) carries a `copy-ok` comment on the line or the line above
+and is skipped. Resume PDFs
+that are known stale are pinned by SHA-256 in the script with a bug reference
+and reported as warnings: once the résumé is regenerated the pin no longer
+matches, and a stale PDF reintroduced under any other hash fails the check.
 
 ## Production configuration
 
