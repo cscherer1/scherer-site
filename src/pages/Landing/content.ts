@@ -13,7 +13,7 @@ export const landingContent: LandingContent = {
   owner: "Christian Scherer",
   roles: "Enterprise Integration & Automation Architect — Azure, ServiceNow & Applied AI",
   summary:
-    "I automate enterprise and M365 processes through ServiceNow, Azure and PowerShell, and connect legacy systems to cloud services and AI. A decade in enterprise IT and eight years at Burns & McDonnell, where I turned manual access, licensing, IP-address, backup and data workflows into supported automation. Examples include EfficientIP pool reservations, Revit server and ImaginIT Clarity automation, delegated manager access to departed employees' files, and ArcGIS backup and restore in Azure. Now at Murphy-Hoffman, bridging IBM i to Azure, and running an applied-AI operations platform I built and operate myself.",
+    "I automate enterprise and M365 processes through ServiceNow, Azure and PowerShell, and connect legacy systems to cloud services and AI. A decade in enterprise IT and eight years at Burns & McDonnell, where I turned manual access, licensing, IP-address, backup and data workflows into supported automation. Examples include EfficientIP pool reservations, Revit server and ImaginIT Clarity automation, delegated manager access to departed employees' files, and ArcGIS backup and restore in Azure. Now at Murphy-Hoffman, bridging IBM i to Azure, and running applied-AI operations tooling I built and operate myself.",
   specialties: [
     "Enterprise integration",
     "Solution architecture",
