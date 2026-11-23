@@ -13,6 +13,7 @@ function locationNote(): string {
   const based = `${profile.citizenship}, based in ${profile.location}.`;
   if (!profile.relocation) return based;
   const sponsorship = profile.sponsorship ? `; ${profile.sponsorship}` : "";
+  // copy-ok: generic template, only used when a relocation target is configured.
   return `${based} Open to relocating to ${profile.relocation}${sponsorship}.`;
 }
 

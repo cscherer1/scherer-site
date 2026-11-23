@@ -44,7 +44,7 @@ export const aboutContent: AboutContent = {
     "Integrate internal platforms using OAuth and Azure tokens.",
     "Connect IBM i (RPGLE/CL) systems to Azure, Python and .NET services.",
     "Build and operate applied-AI tooling with security, cost and failure handling designed in.",
-    "US/UK dual citizen, available to work in the UK without sponsorship.",
+    "US/UK dual citizen.",
   ],
 
   education: [

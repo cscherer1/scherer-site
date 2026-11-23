@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "prebuild": "node scripts/check-copy.mjs",
+    "check:copy": "node scripts/check-copy.mjs",
     "lint": "eslint . --ext .ts,.tsx",
     "preview": "vite preview",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
