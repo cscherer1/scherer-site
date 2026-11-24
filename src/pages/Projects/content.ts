@@ -8,6 +8,8 @@ export type Project = {
   link?: string;
   repo?: string;
   featured?: boolean;
+  private?: boolean;
+  caseStudy?: string;
 };
 
 export type ProjectsContent = {
@@ -20,6 +22,8 @@ export const projectsContent: ProjectsContent = {
   items: [
     {
       id: "agent-test-disposable-container-verification-pipeline",
+      private: true,
+      caseStudy: "/work/agent-test",
       title: "Agent-Test — Disposable-Container Verification Pipeline",
       blurb: "Self-contained CI harness that spins ephemeral containers to run static analysis, unit/API/UI tests, and hardcoded-value scans against the career automation stack without touching live services. Treats undefined-name lint errors as build failures and gates merges on reproducible results.",
       role: "DevOps / Test Engineer",
@@ -54,6 +58,8 @@ export const projectsContent: ProjectsContent = {
     },
     {
       id: "job-search-automation-dashboard",
+      private: true,
+      caseStudy: "/work/career-automation",
       title: "JobDashboard — Self-Hosted Career Automation Stack",
       blurb: "Automated job-search pipeline that scrapes live postings daily (JobSpy), builds a verified skill inventory with evidence, and uses LLM-powered evaluation to score fit against real, provable experience before generating tailored resume PDFs and cover letters. Orchestrated with n8n on Docker, data in NocoDB, dashboard in Python/FastAPI. Architected around the Cloudflare 524 edge-timeout lesson: heavy work runs as background jobs that report progress instead of one long-lived request.",
       role: "Systems & AI Engineer",
@@ -72,6 +78,8 @@ export const projectsContent: ProjectsContent = {
     },
     {
       id: "op-e-console-encrypted-ai-operations-console",
+      private: true,
+      caseStudy: "/work/op-e-console",
       title: "OP-E Console — Encrypted AI Operations Console",
       blurb: "End-to-end encrypted chat console for operating an OpenCode/DeepSeek agent: session resume, screenshot attachments, all-session cost analytics, live health, and an isolated workspace. Adds the Mind observer feed with episodic memory, a read-only Sentinel observer (anomaly triage and advisory alerts), a local FTS5 recall index, a four-lab model council with verification and a judge, a supervised remote-desktop gateway, and a live architecture view. Runs behind Cloudflare Access with Kuma monitoring and verified backups.",
       role: "AI Systems Engineer",
@@ -94,6 +102,8 @@ export const projectsContent: ProjectsContent = {
     },
     {
       id: "ouroborn-local-llm-council",
+      private: true,
+      caseStudy: "/work/ouroborn",
       title: "Ouroborn — Local LLM Deliberation Council",
       blurb: "An original multi-agent system where a panel of local language models answers independently, argues over blind-labeled rounds, and a separate foreman model reads the verdict. Runs entirely on owned hardware via Ollama — no API calls, nothing leaves the machine. Opposite of an API wrapper.",
       role: "Systems & AI Engineer",
@@ -111,6 +121,8 @@ export const projectsContent: ProjectsContent = {
     },
     {
       id: "zero-trust-homelab-infrastructure",
+      private: true,
+      caseStudy: "/work/home-infrastructure",
       title: "Zero Trust Homelab Infrastructure",
       blurb: "Designed and operates a multi-service containerized homelab on Ubuntu Linux, exposed exclusively through Cloudflare Zero Trust tunnels with no open inbound ports. Stack includes AdGuard Home for split-horizon DNS, Cockpit for web-based system management, Portainer for container orchestration, and automated ClamAV scanning pipelines.",
       role: "Systems Engineer / Architect",
@@ -125,6 +137,8 @@ export const projectsContent: ProjectsContent = {
     },
     {
       id: "ai-study-guide-interview-prep-jobdashboard",
+      private: true,
+      caseStudy: "/work/career-automation",
       title: "AI Study Guide & Interview Prep (JobDashboard)",
       blurb: "JobDashboard extension that researches each target company (Wikipedia, news RSS, site scrape, tech-stack detection) and generates a per-job study guide and interview prep sheet grounded only in verified skills and project evidence. Runs as an n8n workflow over the same LLM routing layer.",
       role: "AI Systems Engineer",
@@ -141,6 +155,8 @@ export const projectsContent: ProjectsContent = {
     },
     {
       id: "agentic-cli-development-workflow-opencode-deepseek",
+      private: true,
+      caseStudy: "/work/op-e-console",
       title: "Agentic CLI Development Workflow (OpenCode + DeepSeek)",
       blurb: "Long-context agent-driven development using OpenCode with DeepSeek models for code execution, wired into the same verification gates as human changes: disposable-container tests, hardcode scans, and PR review. Emphasis on invariant design and proof of correctness rather than blind generation.",
       role: "AI Systems Engineer",
@@ -157,6 +173,8 @@ export const projectsContent: ProjectsContent = {
     },
     {
       id: "command-center-disaster-recovery-rebuild-repo",
+      private: true,
+      caseStudy: "/work/home-infrastructure",
       title: "Command Center — Disaster-Recovery Rebuild Repo",
       blurb: "Sanitized disaster-recovery repository for a multi-service home server: every maintained service pinned as a submodule, secrets kept out of source, and a bootstrap that detects the host (distro, UID/GID, storage, ports) and rebuilds the stack from scratch. Includes backup/restore tooling, sanitization checks, and written rebuild runbooks.",
       role: "Systems Architect",
@@ -173,6 +191,8 @@ export const projectsContent: ProjectsContent = {
     },
     {
       id: "command-deck-container-control-plane",
+      private: true,
+      caseStudy: "/work/home-infrastructure",
       title: "Command Deck — Container Control Plane & Tool Console",
       blurb: "Config-driven control plane and 43-tool operations console for a self-hosted Docker stack: discovers Docker services live, groups tools by function, streams host and per-container stats, runs HTTP health probes, and starts/stops/restarts through a guarded action layer. FastAPI and the Docker SDK behind a restricted socket proxy, Cloudflare Access JWT verification, YAML/env config, and a dependency-free SPA.",
       role: "Platform / DevOps Engineer",
@@ -190,6 +210,8 @@ export const projectsContent: ProjectsContent = {
     },
     {
       id: "local-llm-ai-agent-orchestration-stack",
+      private: true,
+      caseStudy: "/work/ouroborn",
       title: "Local LLM & AI Agent Orchestration Stack",
       blurb: "Runs local open-weight LLMs via Ollama for privacy-preserving AI inference. Integrates agent frameworks with local file systems, bash runtimes, and system APIs. Implements contextual prompt chaining and structured tool-calling pipelines connecting model outputs to operational OS commands.",
       role: "AI Systems Engineer",
@@ -204,6 +226,8 @@ export const projectsContent: ProjectsContent = {
     },
     {
       id: "op-e-voice-local-speech-service",
+      private: true,
+      caseStudy: "/work/op-e-console",
       title: "OP-E Voice — Local Speech Service",
       blurb: "Self-hosted speech service for my agent's spoken interface: faster-whisper transcription and Kokoro, Piper, or eSpeak synthesis with per-emotion prosody, signature chirps, and callout framing. Streaming audio runs over an encrypted session with no cloud speech APIs involved.",
       role: "AI Systems Engineer",
@@ -237,6 +261,8 @@ export const projectsContent: ProjectsContent = {
     },
     {
       id: "secure-term-end-to-end-encrypted-browser-terminal",
+      private: true,
+      caseStudy: "/work/op-e-console",
       title: "Secure-Term — End-to-End Encrypted Browser Terminal",
       blurb: "E2E-encrypted long-poll browser terminal that keeps terminal content opaque to edge and TLS-inspection proxies. Python standard-library HTTP server, AES-GCM via WebCrypto, paramiko SSH into persistent tmux sessions, constant-time token auth, no inbound ports. Built so remote administration works through a Zero Trust tunnel without exposing plaintext to the middlebox.",
       role: "Security & Systems Engineer",
@@ -254,6 +280,8 @@ export const projectsContent: ProjectsContent = {
     },
     {
       id: "self-healing-stack-automation",
+      private: true,
+      caseStudy: "/work/home-infrastructure",
       title: "Self-Healing Stack Automation",
       blurb: "Cron-driven operations layer for a multi-container stack: Brave CPU watchdog, container health watchdog, Sonarr queue janitor, qBittorrent executable exclusions, Uptime Kuma-to-ntfy alert bridge, and nightly consistent SQLite/Postgres backups mirrored across drives. Every fix runs unattended with cooldowns and dry-run support.",
       role: "Site Reliability / Platform Engineer",

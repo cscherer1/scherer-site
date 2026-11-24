@@ -37,9 +37,7 @@ export default function ProjectsPage() {
     };
   }, [apiBase]);
 
-  const featuredIds = new Set(
-    localFallback.items.filter((p) => p.featured).map((p) => p.id),
-  );
+  const localMeta = new Map(localFallback.items.map((p) => [p.id, p]));
 
   const source =
     data && data.items.length >= localFallback.items.length
@@ -47,10 +45,18 @@ export default function ProjectsPage() {
       : localFallback.items;
 
   const items = [...source]
-    .map((p) => ({
-      ...p,
-      featured: (p as { featured?: boolean }).featured ?? featuredIds.has(p.id),
-    }))
+    .map((p) => {
+      const meta = localMeta.get(p.id);
+      return {
+        ...p,
+        featured:
+          (p as { featured?: boolean }).featured ?? meta?.featured ?? false,
+        private:
+          (p as { private?: boolean }).private ?? meta?.private ?? false,
+        caseStudy:
+          (p as { caseStudy?: string }).caseStudy ?? meta?.caseStudy,
+      };
+    })
     .sort(
       (a, b) =>
         b.year - a.year ||
@@ -71,9 +77,10 @@ export default function ProjectsPage() {
         <h1 className={`${styles.heading} sectionTitle`}>{"Selected Work"}</h1>
         <p className={styles.blurb}>
           A decade of building, from support automation in 2021 to enterprise
-          integration and applied AI in 2026. The featured work is highlighted;
-          the timeline shows everything I have shipped, including the smaller
-          tools and automations that built the foundation.
+          integration and applied AI in 2026. Featured work is highlighted;
+          private systems carry a Private badge and link to the full case study
+          on the Work page. The timeline shows everything I have shipped,
+          including the smaller tools that built the foundation.
         </p>
         <div className={styles.legend}>
           <span className={styles.legendDot} aria-hidden="true" />
@@ -83,6 +90,9 @@ export default function ProjectsPage() {
           <span className={styles.legendSep}>·</span>
           <span>Newest first</span>
         </div>
+        <Link className={styles.btn} to="/work">
+          Read the private case studies →
+        </Link>
       </header>
 
       {items.length > 0 && (
@@ -107,9 +117,14 @@ export default function ProjectsPage() {
                     >
                       <div className={styles.cardTitleRow}>
                         <div className={styles.cardTitle}>{p.title}</div>
-                        {p.featured && (
-                          <span className={styles.featuredTag}>Featured</span>
-                        )}
+                        <span className={styles.tagRow}>
+                          {p.private && (
+                            <span className={styles.privateTag}>Private</span>
+                          )}
+                          {p.featured && (
+                            <span className={styles.featuredTag}>Featured</span>
+                          )}
+                        </span>
                       </div>
 
                       <div className={styles.meta}>
@@ -125,26 +140,28 @@ export default function ProjectsPage() {
 
                       <p className={styles.cardBlurb}>{p.blurb}</p>
 
-                      {p.link?.trim() || p.repo?.trim() ? (
+                      {p.caseStudy?.trim() || p.link?.trim() || p.repo?.trim() ? (
                         <div className={styles.cardFooter}>
-                          {p.link?.trim() && (
-                            <>
-                              {p.link.startsWith("/") ? (
-                                <Link className={styles.btn} to={p.link}>
-                                  Case Study
-                                </Link>
-                              ) : (
-                                <a
-                                  className={styles.btn}
-                                  href={p.link}
-                                  target="_blank"
-                                  rel="noreferrer noopener"
-                                >
-                                  Live
-                                </a>
-                              )}
-                            </>
-                          )}
+                          {p.caseStudy?.trim() ? (
+                            <Link className={styles.btn} to={p.caseStudy}>
+                              Private case study
+                            </Link>
+                          ) : p.link?.trim() ? (
+                            p.link.startsWith("/") ? (
+                              <Link className={styles.btn} to={p.link}>
+                                Case Study
+                              </Link>
+                            ) : (
+                              <a
+                                className={styles.btn}
+                                href={p.link}
+                                target="_blank"
+                                rel="noreferrer noopener"
+                              >
+                                Live
+                              </a>
+                            )
+                          ) : null}
                           {p.repo?.trim() && (
                             <a
                               className={styles.btn}

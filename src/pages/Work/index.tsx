@@ -10,12 +10,13 @@ export default function WorkIndexPage() {
 
       <header className={styles.header}>
         <div className={styles.eyebrow}>Work</div>
-        <h1 className={`${styles.heading} sectionTitle`}>Case Studies</h1>
+        <h1 className={`${styles.heading} sectionTitle`}>Private Systems, Public Evidence</h1>
         <p className={styles.blurb}>
-          Deep dives on four systems I designed, built and run from Las Vegas:
-          three internal, self-hosted tools that power my own work, and a game in
-          development. Each one covers the problem, the build, the architecture,
-          what it proves and where it stops.
+          Deep dives on eight private systems I designed, built and operate from
+          Las Vegas — grouped by system, not by repository. Each one covers the
+          problem, the build, the architecture, what it proves, why the code stays
+          private, what is public, and where it stops. The code is withheld; the
+          evidence, the design decisions and the limits are not.
         </p>
       </header>
 

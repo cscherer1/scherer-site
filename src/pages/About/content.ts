@@ -36,15 +36,15 @@ export type AboutContent = {
 export const aboutContent: AboutContent = {
   heading: "About Me",
   blurb:
-    "I am an enterprise integration and automation architect, not a pure programmer. I start with the business process, design the interfaces and controls, then build the smallest system that removes the manual work and stays supportable. A decade in enterprise IT and eight years at Burns & McDonnell, where I automated enterprise and M365 processes through ServiceNow, Azure and PowerShell: access and licensing changes, IP-address management, backup and restore, and supporting data workflows. Now at Murphy-Hoffman, I connect IBM i (RPGLE/CL) systems to Azure, Python and .NET services. I also design and operate applied-AI tooling on a self-hosted production stack for my own operations work, so the AI work is grounded in real deployment, security and cost constraints.",
+    "I am a software and platform engineer with an integration and automation background. I start with the process, design the interfaces and controls, then build the smallest system that removes the manual work and stays supportable. A decade in enterprise IT and eight years at Burns & McDonnell, where I automated enterprise and M365 processes through ServiceNow, Azure and PowerShell: access and licensing, IP-address management, backup and restore, and the data workflows around them. Now at Murphy-Hoffman, I connect IBM i (RPGLE/CL) systems to Azure, Python and .NET services. Outside work I design and operate private systems — an encrypted AI console and terminal, a job and contract automation stack, a zero-trust home platform, a records-grounded health assistant, a reseller tool, and a browser game in development. Each is documented as a case study that states plainly why the code is private and what is public. Based in Las Vegas; remote-first, with hybrid considered for the right role. US/UK dual citizen, no sponsorship needed.",
   highlights: [
-    "Automate enterprise and M365 processes through ServiceNow, Azure and PowerShell.",
-    "Cover access and licensing, IP-address management, backup and restore, and supporting data workflows.",
-    "Examples: EfficientIP pool reservations, Revit server and ImaginIT Clarity automation, delegated manager access to departed employees' files, and ArcGIS backup and restore in Azure.",
-    "Integrate internal platforms using OAuth and Azure tokens.",
-    "Connect IBM i (RPGLE/CL) systems to Azure, Python and .NET services.",
-    "Build and operate applied-AI tooling with security, cost and failure handling designed in.",
-    "US/UK dual citizen.",
+    "Software and platform engineering on top of a decade of enterprise integration and automation.",
+    "Enterprise and M365 automation through ServiceNow, Azure and PowerShell: access and licensing, IP-address management, backup and restore, and supporting data workflows.",
+    "IBM i (RPGLE/CL) ↔ Azure, Python and .NET integration with observable, recoverable production interfaces.",
+    "Private systems, public evidence: eight case studies covering an encrypted AI console, career automation, disposable-container verification, a zero-trust home platform, a health assistant, a reseller tool, a local model council, and a game.",
+    "Remote-first, based in Las Vegas; hybrid considered for the right role.",
+    "US/UK dual citizen, no sponsorship needed.",
+    "Open to software, platform and integration engineering roles.",
   ],
 
   education: [
