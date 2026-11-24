@@ -217,6 +217,22 @@
   text-transform: uppercase;
   white-space: nowrap;
 }
+.tagRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.privateTag {
+  color: #ffcf7a;
+  border: 1px solid rgba(255, 207, 122, 0.35);
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
 .cardTitleRow {
   display: flex;
   justify-content: space-between;

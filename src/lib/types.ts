@@ -8,6 +8,8 @@ export type Project = {
   role: string;
   link?: string;
   repo?: string;
+  private?: boolean;
+  caseStudy?: string;
 };
 
 export type ProjectsDto = {

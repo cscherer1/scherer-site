@@ -11,9 +11,9 @@ export type LandingContent = {
 
 export const landingContent: LandingContent = {
   owner: "Christian Scherer",
-  roles: "Enterprise Integration & Automation Architect — Azure, ServiceNow & Applied AI",
+  roles: "Software & Platform Engineer — Integration, Automation & Applied AI | Remote-first",
   summary:
-    "I automate enterprise and M365 processes through ServiceNow, Azure and PowerShell, and connect legacy systems to cloud services and AI. A decade in enterprise IT and eight years at Burns & McDonnell, where I turned manual access, licensing, IP-address, backup and data workflows into supported automation. Examples include EfficientIP pool reservations, Revit server and ImaginIT Clarity automation, delegated manager access to departed employees' files, and ArcGIS backup and restore in Azure. Now at Murphy-Hoffman, bridging IBM i to Azure, and running applied-AI operations tooling I built and operate myself.",
+    "I build the integration and automation layer between legacy systems, cloud services, and AI — and the private systems that keep my own operation running. A decade in enterprise IT and eight years at Burns & McDonnell, where I turned manual access, licensing, IP-address, backup and data workflows into supported automation. Now at Murphy-Hoffman, bridging IBM i to Azure, Python and .NET, and operating a self-hosted platform of encrypted, evidence-first tools. Based in Las Vegas; remote-first, with hybrid considered for the right fit.",
   specialties: [
     "Enterprise integration",
     "Solution architecture",
@@ -29,6 +29,8 @@ export const landingContent: LandingContent = {
     "PostgreSQL",
     "Applied AI",
     "LLM orchestration",
+    "Private / self-hosted systems",
+    "Remote-first delivery",
   ],
   cta: { label: "View Projects", href: "/projects" },
   ctaSecondary: { label: "Contact Me", href: "/contact" },

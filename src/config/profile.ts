@@ -82,11 +82,11 @@ export const profile = {
   sponsorship: env.VITE_SPONSORSHIP_NOTE || "",
   availability:
     env.VITE_AVAILABILITY ||
-    "Open to in-office, hybrid, or remote full-time or contract roles in integration architecture, automation architecture and solutions engineering.",
+    "Open to remote software, platform and integration engineering roles; hybrid in Las Vegas considered for exceptional fit. Full-time or contract.",
   firstContact: env.VITE_CONTACT_NOTE || "Email is the best first contact.",
   resumeFile: env.VITE_RESUME_FILE || "Christian_Scherer_Resume.pdf",
   // Cache-busters: set these to the new PDF's git blob SHA (or any unique
   // token) whenever the resume is regenerated.
-  resumeBust: env.VITE_RESUME_BUST || "5a856ce2aeaaba16022c60f9cd88f3ddd8f58c75",
+  resumeBust: env.VITE_RESUME_BUST || "3e2649ac6e4fcd1aca738a4c564fcd05a95d3093",
   links: parseLinks(env.VITE_CONTACT_LINKS),
 };
